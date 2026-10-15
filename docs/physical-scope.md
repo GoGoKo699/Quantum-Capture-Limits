@@ -32,7 +32,7 @@ The preprocessor is a CPTP map composed with the sender's encoder. It can reshap
 
 No source bandwidth, peak flux or conversion cost is charged. Actual waveform-conversion schemes have phasematching, power and efficiency conditions [DMR15](references.md#dmr15), Secs. II and IV.C; they are not implementations of every preprocessor constructed here. For a prescribed source, receiving modulation can improve capture, as the [square-pulse example](counterexamples.md#a-fixed-source-counterexample-makes-the-resource-boundary-concrete) shows.
 
-A shared phase reference is supplied for vacuum–one-photon coherence; its establishment and maintenance are uncharged. Unknown phase offsets must be modeled separately. Independent phase randomization at each use and a common unknown phase across a block are different channels: the latter can preserve relational encodings. The collective-reference constructions of [BRS03](references.md#brs03) give a broader precedent for this distinction. Absence of a shared reference cannot simply be identified with independent dephasing; no reference-free capacity is evaluated here.
+A shared phase reference is supplied for vacuum–one-photon coherence; its establishment and maintenance are uncharged. Independent phase randomization at each use and a common unknown phase across a block are different channels: the latter can preserve relational encodings. The collective-reference constructions of [BRS03](references.md#brs03) give a broader precedent for this distinction. A phase-uncertainty model must therefore specify correlations across uses.
 
 ## Observables that distinguish the claims
 

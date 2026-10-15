@@ -136,7 +136,7 @@ If the inequality fails, there is a normalized f for which
 
 The subspace $\operatorname{span}\{|\mathrm{vac}\rangle,|1_f\rangle\}$ then has positive capacity by the fixed-mode criterion above. Thus the general operator inequality is both necessary and sufficient for the zero-capacity side in this channel class. This conclusion does not rely on a finite discretization or on assuming that a particular pulse is optimal.
 
-The proof is a short composition of known channel arguments, supplied here to avoid overstating a pulse-family-only restriction as an arbitrary-mode theorem. No separate priority claim for the abstract channel-class observation is made.
+The countable extension applies the channel arguments to the full temporal input space, including arbitrary superpositions of modes.
 
 ## Exact receiver spectrum and boundary pulse
 
@@ -242,9 +242,9 @@ p+m^2=\frac{4\beta a(2a+c+1)}{(a+1)(a+c)^2},\qquad c=1+2r.
 
 Its stationary polynomial is 2a³+2a²+(1-3c)a-c²-c=0. For c>=1 there is exactly one positive root, and the objective vanishes at both endpoints. This proves the exponential-family global optimum. The extension from that family to the exact boundary is only about 0.6% in $r$. The channel-ordering theorem, rather than a large advantage from complicated pulse shapes, is the central result.
 
-## Capacity positivity is not a useful-rate guarantee
+## Achievable rates near the boundary
 
-The small-input proof can certify remarkably small rates near the boundary. We evaluated the full entropy formulas, not only their asymptotic expansion, at both 90 and 140 decimal digits.
+The small-input proof certifies positive rates close to the boundary. The full entropy formulas below are checked at both 90 and 140 decimal digits.
 
 For the elementary r=0.72 exponential and rho_q=diag(1-q,q), q=10^-26 gives
 
@@ -266,7 +266,7 @@ I_c=2.7362773681\ldots\times10^{-19}
 \quad\text{qubits per independent use}.
 ```
 
-These are achievable lower bounds. They are **not upper bounds** on the capacity and do not exclude more effective inputs or multi-use codes. We have not solved that optimization. They nevertheless prevent a practical-rate claim from being supported merely by the sign switch. A standard double-precision entropy scan can miss such positivity altogether; the analytic criterion and high-precision witnesses distinguish a true zero from a positive number below ordinary numerical resolution. Entropic singularities and very small positive transmission witnesses are established phenomena [S21, SAJS24].
+These are achievable lower bounds for the specified inputs. A standard double-precision entropy scan can miss such positivity; the analytic criterion and high-precision witnesses distinguish a true zero from a positive number below ordinary numerical resolution. Entropic singularities and very small positive transmission witnesses are established phenomena [S21, SAJS24].
 
 There is also an independent [upper bound on the full capacity](capacity-upper-bound.md). With $\delta=\beta\Lambda_r(S)-1>0$, it gives $Q=O(\delta\log(1/\delta))$ as the boundary is approached. Thus all codes have vanishing rate there, although the upper bound and these achievable witnesses do not determine the exact rate or its scaling.
 

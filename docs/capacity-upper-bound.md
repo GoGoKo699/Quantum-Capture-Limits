@@ -129,6 +129,6 @@ At $\beta=1$ with an unlimited input window, evaluations of this upper bound are
 | 0.7357 | 0.0011154523 |
 | 0.7358 | 0.0000123617 |
 
-These are floating-point evaluations of the analytic bound, rather than interval-certified numerical enclosures. They upper-bound the entire temporal-input channel, whereas the [positive-rate witnesses](capacity-boundary.md#capacity-positivity-is-not-a-useful-rate-guarantee) use particular pulses and inputs.
+These are floating-point evaluations of the analytic bound, rather than interval-certified numerical enclosures. They upper-bound the entire temporal-input channel, whereas the [positive-rate witnesses](capacity-boundary.md#achievable-rates-near-the-boundary) use particular pulses and inputs.
 
 The bound is generally loose. It neither matches the small-input lower bounds nor determines the true critical scaling of the capacity. Combined with the [logarithmic capture-window divergence](finite-time.md#the-window-diverges-logarithmically-near-the-boundary), it distinguishes two statements: longer pulses can recover a strictly positive channel margin near the boundary, while every achievable rate still vanishes as that margin vanishes.

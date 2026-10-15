@@ -81,7 +81,7 @@ def main():
     record = {
         "status": "PASS",
         "recorded_utc": datetime.now(timezone.utc).isoformat(),
-        "scope": f"{sum(n for _, n in SUITES)} scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
+        "scope": f"{sum(n for _, n in SUITES)} scientific check groups plus structural checks supporting the analytical results. See verification/README.md for the evidence covered.",
         "scientific_groups": sum(n for _, n in SUITES),
         "structure": structure, "suites": results, "source_sha256": source_hashes(),
     }

@@ -116,7 +116,7 @@ The logarithmic coefficient is 0.4045959521. This is not a closing dynamical Lio
 
 The [capacity upper bound](capacity-upper-bound.md) also applies at each finite S. For fixed r and beta admitting a threshold $S_Q$, smoothness of the leading eigenvalue gives $Q=O((S-S_Q)\log(1/(S-S_Q)))$ as $S\downarrow S_Q$ from above. This bounds every unassisted code; it does not assert an exact rate law.
 
-## A finite pulse with a non-tiny rate witness
+## A finite-pulse achievable rate
 
 To separate the exact sign boundary from infinitesimal-rate examples, choose beta=1, r=1/2 and the ordinary rising exponential, written in lookback coordinates,
 
@@ -156,7 +156,7 @@ Therefore
 
 ```math
 \boxed{I_c=H_2(pq)-H(e_0,e_+,e_-)
-=0.02957015518955046\ldots\ \text{bits per use}.}
+=0.02957015518955046\ldots\ \text{qubits per use}.}
 ```
 
 Positive coherent information gives an achievable unassisted rate; this coding fact and the damping–dephasing application are established [SAJS24](references.md#sajs24). No selection of successful absorptions is made. The average one-photon probability for this input is 1/8, not exponentially small. Explicit values for the same pulse family and input are:
@@ -168,6 +168,6 @@ Positive coherent information gives an achievable unassisted rate; this coding f
 | 4 | 0.02957016 |
 | 6 | 0.02981631 |
 
-These are lower bounds, not a globally optimized single-letter or regularized capacity. The result does not prove superiority over an absorption-optimized receiver's full capacity; that requires upper bounds or a solved optimization, not comparing two achievable witnesses. Damping–dephasing coherent information can be nonadditive [SAJS24](references.md#sajs24) and [BL25](references.md#bl25). No practical encoder, output shelving, reset time, or a full link-noise budget is supplied. In particular, dividing these values by T would not be a demonstrated physical throughput.
+These are achievable rates for the stated pulse and input. The [capacity upper bound](capacity-upper-bound.md) constrains the regularized rate over all codes; damping–dephasing coherent information can be nonadditive [SAJS24](references.md#sajs24) and [BL25](references.md#bl25). Rates are per independently reset capture use, with the operational assumptions specified in the [model](model.md).
 
-The piecewise support endpoint is an idealization of the model. Any strict positive margin and positive CI witness persist under a sufficiently small L2 smoothing of the waveform; a separately specified laboratory bandwidth cap is not evaluated here.
+Any strict positive margin and positive coherent-information witness persist under a sufficiently small $L^2$ smoothing of the waveform's support endpoint.

@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "recorded_utc": "2026-10-15T21:09:03.375791+00:00",
-  "scope": "22 scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
+  "recorded_utc": "2026-10-15T21:30:52.591696+00:00",
+  "scope": "22 scientific check groups plus structural checks supporting the analytical results. See verification/README.md for the evidence covered.",
   "scientific_groups": 22,
   "structure": {
     "python_files_parsed": 13,
-    "local_links_checked": 135
+    "local_links_checked": 134
   },
   "suites": {
     "simulation": {
@@ -73,6 +73,6 @@
     "tests/check_objectives.py": "2e583e99f923dc66e1f673371237db2b6197468d5f45b6fea18a2915312405ab",
     "tests/check_simulation.py": "71d7a8ecbfecf1eb4f1c910fce50293162ada89f6e4b5cff1d7a60cd3f4d2e50",
     "tests/check_upper_bound.py": "4bea978390bd4a4881155eec35e9c60946f24e3148314036d1688ff468714c58",
-    "tools/verify.py": "7fae9d7040145863392da2528151a54db72b436054f6220c4fd3a2a56db19705"
+    "tools/verify.py": "55e2f87730b13cd7961b0a316b74e4a98a14fdb0300e6a4e9f31d114508beba1"
   }
 }

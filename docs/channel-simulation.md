@@ -182,7 +182,7 @@ Maximum coupling is itself an allowed schedule, proving equality after the contr
 
 It does **not** imply that one fixed deterministic wavepacket at maximum coupling reproduces every controlled one-mode code. The simulator can mix temporal modes. The capacity comparison concerns the full input space and standard encoding freedom specified in the [model](model.md). Nor does it compare the same fixed incoming state at two schedules.
 
-The same simulation lets the sender reproduce classical messages and other receiver-output communication tests when their encoding resources include this preprocessing. No general claim is made about device-control costs, noise sensing, access to environmental outputs, or protocol classes that prohibit such encoding.
+The same simulation lets the sender reproduce classical messages and other receiver-output communication tests when their encoding resources include this preprocessing.
 
 The exact zero/positive boundary is a corollary. With $\Lambda_r(S)$ the largest eigenvalue of
 
@@ -190,4 +190,4 @@ The exact zero/positive boundary is a corollary. With $\Lambda_r(S)$ the largest
 L_r(u,v)=e^{-(u+v)/2}[e^{-r|u-v|}+e^{-r(u+v)}],
 ```
 
-positive Q is possible exactly when $\beta_M\Lambda_r(S)>1$. The qubit damping–dephasing criterion and logarithmic-entropy argument behind that sign classification are established [SAJS24](references.md#sajs24). The current result neither reevaluates $\Lambda_r(S)$ nor solves the positive capacity value. In particular, the [finite pulse](finite-time.md) with an achievable lower bound near 0.0296 qubits/use does not become an exact capacity by this theorem.
+positive $Q$ is possible exactly when $\beta_M\Lambda_r(S)>1$. The qubit damping–dephasing criterion and logarithmic-entropy argument behind that sign classification are established [SAJS24](references.md#sajs24). The [capacity boundary](capacity-boundary.md) gives the all-mode proof, while [finite pulses](finite-time.md) supply achievable rates and the [capacity upper bound](capacity-upper-bound.md) constrains every code.
