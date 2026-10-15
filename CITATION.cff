@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this repository by its URL and the commit used."
+title: "Quantum Capture Limits"
+authors:
+  - family-names: Lin
+    given-names: Ruge
+    email: gogoko699@gmail.com
+repository-code: "https://github.com/GoGoKo699/Quantum-Capture-Limits"
+url: "https://github.com/GoGoKo699/Quantum-Capture-Limits"
+license: MIT
+type: software
+abstract: >-
+  Analytical channel-simulation and communication limits for a two-level
+  single-photon receiver with bounded coupling and fixed Markov noise.
+  Includes continuum proofs and independently organized numerical checks.
