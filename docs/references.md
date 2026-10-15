@@ -1,6 +1,6 @@
 # References and attribution
 
-The established ingredients are credited separately from the receiver-specific results. This is a source map, not a priority certificate. The exact stochastic dilation and permitted source operations matter when comparing control theorems.
+This source map connects the receiver-specific results to established capture and channel theory. The stochastic dilation and permitted source operations determine which control results apply.
 
 | Subject | Established predecessor | Role here |
 |---|---|---|
@@ -20,9 +20,7 @@ The established ingredients are credited separately from the receiver-specific r
 | Dephasing and exponential pulses | [L22](#l22) | Existing noisy exponential-family population optimum and direct artificial-atom setting |
 | Temporal shaping | [RG17](#rg17), [W11](#w11), [DMR15](#dmr15) | Excitation optima and physical costs of source conversion |
 
-The precise object to compare with these works is the full map $\mathcal E_{g,\Delta}=\mathcal E_{\max}\circ\mathcal P_{g,\Delta}$ on vacuum plus the entire one-photon temporal Hilbert space, with the coupling ceiling, source freedom, and fixed Markov noise retained. General data processing alone does not construct that map. Conversely, no new channel-comparison principle or qubit-capacity classification is asserted here.
-
-The [prior-work comparison](prior-work.md) gives equation-level overlaps and the scope of the literature inspection. The [physical interpretation](physical-scope.md) distinguishes resource assumptions from device measurements. Version-specific equation numbers below refer to the linked source, rather than an unspecified latest version.
+The [prior-work comparison](prior-work.md) explains the equation-level relationships to the full input-preprocessing identity. The [physical interpretation](physical-scope.md) connects the resource assumptions to device measurements. Equation numbers below refer to the linked source versions.
 
 <a id="ao07"></a>
 ## AO07
@@ -97,7 +95,7 @@ W.-J. Lin et al., *Deterministic Loading of Microwaves onto an Artificial Atom U
 <a id="lc23"></a>
 ## LC23
 
-D. Lonigro, D. Chruściński, *Excitation-damping quantum channels*, Journal of Physics A: Mathematical and Theoretical **56**, 255301 (2023). DOI [10.1088/1751-8121/acd734](https://doi.org/10.1088/1751-8121/acd734). [arXiv:2206.04623v1](https://arxiv.org/html/2206.04623v1). Section 2.1, Eqs. (2)–(5), and Theorem 2.1 give a general excitation/ground block structure and complete-positivity criterion. Applied to finite temporal truncations with a one-dimensional excited output, this reduces to $0\preceq|b\rangle\langle b|\preceq A\preceq I$. The channel form itself is not claimed new.
+D. Lonigro, D. Chruściński, *Excitation-damping quantum channels*, Journal of Physics A: Mathematical and Theoretical **56**, 255301 (2023). DOI [10.1088/1751-8121/acd734](https://doi.org/10.1088/1751-8121/acd734). [arXiv:2206.04623v1](https://arxiv.org/html/2206.04623v1). Section 2.1, Eqs. (2)–(5), and Theorem 2.1 give a general excitation/ground block structure and complete-positivity criterion. Applied to finite temporal truncations with a one-dimensional excited output, this reduces to $0\preceq|b\rangle\langle b|\preceq A\preceq I$.
 
 <a id="ls09"></a>
 ## LS09
@@ -107,7 +105,7 @@ D. Leung, G. Smith, *Continuity of quantum channel capacities*, Communications i
 <a id="lsymm25"></a>
 ## LSYMM25
 
-H. Luo, P. S. Shah, F. Yang, M. Mirhosseini, S. Mahmoodian, *Dynamic stimulated emission for deterministic addition and subtraction of propagating photons*, arXiv:2512.09711v1, submitted December 10, 2025. https://arxiv.org/html/2512.09711v1 . Section II.2 reviews the single-excitation tunable-coupling construction. No latest-version claim is made.
+H. Luo, P. S. Shah, F. Yang, M. Mirhosseini, S. Mahmoodian, *Dynamic stimulated emission for deterministic addition and subtraction of propagating photons*, arXiv:2512.09711v1, submitted December 10, 2025. https://arxiv.org/html/2512.09711v1 . Section II.2 reviews the single-excitation tunable-coupling construction.
 
 <a id="mp95"></a>
 ## MP95
@@ -122,7 +120,7 @@ F. A. Mele, F. Salek, V. Giovannetti, L. Lami, *Quantum communication on the bos
 <a id="n02"></a>
 ## N02
 
-M. A. Nielsen, *A simple formula for the average gate fidelity of a quantum dynamical operation*, Physics Letters A **303**, 249–252 (2002), arXiv:quant-ph/0205035. DOI: 10.1016/S0375-9601(02)01272-0. This paper also attributes earlier fidelity identities; no new average-fidelity formula is claimed here. https://arxiv.org/abs/quant-ph/0205035 .
+M. A. Nielsen, *A simple formula for the average gate fidelity of a quantum dynamical operation*, Physics Letters A **303**, 249–252 (2002), arXiv:quant-ph/0205035. DOI: 10.1016/S0375-9601(02)01272-0. Gives the average-fidelity identity used in the pulse comparison. https://arxiv.org/abs/quant-ph/0205035 .
 
 <a id="njy16"></a>
 ## NJY16

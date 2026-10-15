@@ -10,7 +10,7 @@ Does varying a receiver's coupling improve quantum communication when the source
 | [Simulation theorem](docs/channel-simulation.md) · [Model](docs/model.md) | Read the exact channel identity, construction and resource assumptions. |
 | [Capacity boundary](docs/capacity-boundary.md) · [Finite capture time](docs/finite-time.md) | Find the zero/positive-capacity condition, minimum window and a finite-pulse witness. |
 | [Capacity upper bound](docs/capacity-upper-bound.md) · [Pulse objectives](docs/pulse-objectives.md) | Separate an all-code rate ceiling from absorption, fidelity and achievable-rate objectives. |
-| [Scientific synthesis](docs/scientific-synthesis.md) · [Prior work](docs/prior-work.md) | Follow the complete argument and its relation to established results. |
+| [Prior work](docs/prior-work.md) · [References](docs/references.md) | Compare the results with established capture and channel theory. |
 | [Verification](verification/README.md) · [LLM guide](llms.txt) | Reproduce the checks and locate the authoritative answer to a relevant research question. |
 
 ## What is being compared
@@ -35,7 +35,7 @@ The preprocessor $\mathcal P_{g,\Delta}$ is completely positive and trace preser
 \sup_{g,\Delta}Q(\mathcal E_{g,\Delta})=Q(\mathcal E_{\max}).
 ```
 
-This identifies an optimal receiving schedule without determining the positive capacity value or a capacity-achieving pulse. The rate is in qubits per independent capture use; it is not a throughput or a long-term storage guarantee.
+This identifies an optimal receiving schedule for arbitrary communication codes. Achievable rates and all-code upper bounds are given below, in qubits per independent capture use.
 
 ## Why the simulation works
 
@@ -67,7 +67,7 @@ The [tutorial bridge](docs/tutorial.md) selects the relevant PDF sections, trans
 
 ## Evidence and reproduction
 
-Use Python 3.13 and an isolated environment:
+Use Python 3.12 or 3.13 and an isolated environment:
 
 ```bash
 python -m pip install -r requirements.txt

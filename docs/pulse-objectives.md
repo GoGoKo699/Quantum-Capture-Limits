@@ -235,6 +235,6 @@ p=0.27966553,\quad m=0.37178486,\quad
 
 The exact unrestricted optimum is only 0.000134955 higher. At r=1 the gap is 0.000335130; at r=10 it is 0.0000082673. These are pointwise checks, not a proof of a uniform bound over every r and beta.
 
-This comparison prevents a misleading “Bessel pulses beat conventional pulses” claim. The clear effect is the change from optimizing population to optimizing coherent transfer. Complex pulse synthesis supplies only a small further improvement in the tested examples. Even the strong-noise leading fidelity scaling is already achieved by the coherence-optimized exponential.
+The main improvement comes from optimizing coherent transfer instead of population. Allowing arbitrary pulse shapes supplies a small further improvement in these examples. The coherence-optimized exponential already achieves the leading strong-noise fidelity scaling.
 
-This page optimizes a fixed receiver. The [simulation theorem](channel-simulation.md) handles bounded variable coupling and known detuning with free temporal encoding. Extra storage levels, bath monitoring, heralded recovery, multiple excited-state encodings and non-Markovian reservoir engineering are different resource models; no universal quantum-memory bound is claimed. The hypothetical ideal beta=1 removes radiative port mismatch in the example; it does not claim such a port is available for every emitter.
+These pulse optima use a fixed receiver. The [simulation theorem](channel-simulation.md) extends the channel comparison to bounded variable coupling and known detuning under the [model's source and noise assumptions](model.md). The examples with $\beta=1$ describe ideal coupling to the incident port.
