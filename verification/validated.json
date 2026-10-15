@@ -1,11 +1,11 @@
 {
   "status": "PASS",
-  "recorded_utc": "2026-10-15T20:50:33.432514+00:00",
+  "recorded_utc": "2026-10-15T21:09:03.375791+00:00",
   "scope": "22 scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
   "scientific_groups": 22,
   "structure": {
     "python_files_parsed": 13,
-    "local_links_checked": 132
+    "local_links_checked": 135
   },
   "suites": {
     "simulation": {

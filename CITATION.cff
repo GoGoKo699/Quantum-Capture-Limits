@@ -11,5 +11,21 @@ license: MIT
 type: software
 abstract: >-
   Analytical channel-simulation and communication limits for a two-level
-  single-photon receiver with bounded coupling and fixed Markov noise.
-  Includes continuum proofs and independently organized numerical checks.
+  receiver with bounded coupling and fixed Markov loss and dephasing.
+  Vacuum-plus-one-photon temporal encodings permit an exact input-preprocessing
+  comparison with maximum coupling, an all-mode zero-capacity boundary,
+  and capacity bounds per independently reset use. Includes continuum proofs,
+  a learning route from the SLH input-output framework, and independently
+  organized numerical checks.
+keywords:
+  - quantum capture
+  - single-photon absorption
+  - quantum input-output theory
+  - SLH framework
+  - temporal-mode encoding
+  - two-level receiver
+  - bounded coupling
+  - Markov dephasing
+  - quantum channel simulation
+  - antidegradability
+  - quantum capacity

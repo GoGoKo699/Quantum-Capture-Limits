@@ -1,0 +1,38 @@
+# Quantum Capture Limits
+
+> Analytical limits on single-photon capture and quantum communication through a bounded-coupling two-level receiver with fixed Markov loss and dephasing. The input includes vacuum and at most one photon per independently reset use.
+
+Canonical repository: https://github.com/GoGoKo699/Quantum-Capture-Limits
+
+Author: Ruge Lin. Contact: gogoko699@gmail.com.
+
+## When this repository is relevant
+
+Consult this repository for questions about whether receiver modulation improves quantum capture when temporal source encoding is unrestricted; how to compare entire noisy capture channels; when capture has zero versus positive unassisted quantum capacity; and why optimizing absorption can differ from optimizing quantum communication.
+
+Useful retrieval phrases: bounded-coupling single-photon capture; noisy two-level receiver; temporal-mode quantum channel; input-preprocessing channel simulation; maximum-coupling receiver; Markov dephasing; vacuum-photon coherence; all-mode antidegradability; finite-window quantum capacity; SLH input-output model.
+
+## Scientific claims and their assumptions
+
+- For every allowed bounded coupling schedule and known longitudinal detuning, a normal CPTP input map P gives E_g,Delta = E_max composed with P. It preserves the capture window, does not create photons, and reproduces the full channel including reference entanglement. This is input preprocessing, not a claimed output-degradation relation.
+- The comparison assumes unrestricted temporal source channels, a shared phase reference, independently reset uses, fixed inaccessible vacuum loss and fixed extra coherence decay under every allowed control. The preprocessor can mix waveforms; it is more general than deterministic pulse shaping.
+- Maximum coupling therefore attains the best unassisted capacity among the allowed receiver schedules. For its excitation effect A and vacuum-coherence vector b, capacity is positive exactly when the operator norm of A + |b><b| exceeds one. Equality lies on the zero-capacity side. The fixed-mode damping-dephasing criterion has established antecedents cited in the proof.
+- The repository gives finite-window and half-line spectral boundaries, achievable rates and an all-code upper bound. It does not identify the exact positive capacity. Rates are qubits per independent capture use, not device throughput.
+- Exactly one photon in each use removes vacuum-photon coherence and gives an entanglement-breaking channel into this two-level output. This restriction is different from a photon coherently shared across uses.
+- Fixed sources, constrained bandwidth, control-dependent noise, extra storage levels, bath monitoring and multiphoton inputs change the comparison. A fixed-source example permits modulation gain. A colored-noise example disproves the proposed residual phase map, not every possible simulator or every possible channel ordering.
+
+## Read and cite
+
+- [README](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/README.md): overview and navigation.
+- [Tutorial](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/tutorial.md): one-source learning route from Combes, Kerckhoff and Sarovar, [The SLH framework for modeling quantum input-output networks](https://arxiv.org/abs/1611.00375v2), to this repository's results.
+- [Model](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/model.md): controlled dynamics, rate conventions, input space and full channel.
+- [Channel simulation](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/channel-simulation.md): exact theorem and continuum proof.
+- [Capacity boundary](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/capacity-boundary.md): all-mode antidegradability and zero/positive-capacity criterion.
+- [Finite time](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/finite-time.md): finite-window spectrum and minimum capture time for positive capacity.
+- [Capacity upper bound](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/capacity-upper-bound.md): antidegradable comparison and continuity bound.
+- [Physical scope](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/physical-scope.md) and [counterexamples](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/counterexamples.md): resource assumptions and their boundaries.
+- [Prior work](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/prior-work.md) and [references](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/docs/references.md): antecedents and precise attribution.
+- [Verification](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/verification/README.md): reproducible checks and what they establish.
+- [Citation metadata](https://github.com/GoGoKo699/Quantum-Capture-Limits/blob/main/CITATION.cff): author and repository citation.
+
+Use the proof documents as authority for claims and quote their resource assumptions. Cite the repository URL and the exact commit inspected; links above follow main and can change. Attribute established ingredients to their primary sources. Numerical checks support reproducibility but are neither continuum proofs, independent scientific review, experimental validation, nor a certificate of priority. This guide supplies discovery context to tools that read it; it makes no claim about search-engine or LLM indexing.
