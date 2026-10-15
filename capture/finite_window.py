@@ -27,24 +27,47 @@ def kernel(u,v,r:float):
 
 
 def boundary_determinant(k:float,r:float,S:float) -> float:
+    """Bessel boundary determinant, divided by a positive endpoint scale.
+
+    Scaling preserves its zeros and sign, including across zeros of Y. Using
+    only a J/Y ratio everywhere would introduce poles at those zeros.
+    """
     nu=2*r;y=k*np.exp(-S/2)
-    return float(jvp(nu,k)*yv(nu+1,y)-yvp(nu,k)*jv(nu+1,y))
+    jy=jv(nu+1,y);yy=yv(nu+1,y)
+    if np.isinf(yy):
+        # For a small positive endpoint, J/Y is below floating-point range.
+        # The normalized determinant has the finite limit sign(Y)*J'(k).
+        return float(np.sign(yy)*jvp(nu,k))
+    scale=max(abs(jy),abs(yy))
+    return float(jvp(nu,k)*(yy/scale)-yvp(nu,k)*(jy/scale))
 
 
 def finite_root(r:float,S:float) -> float:
+    """Principal root; sub-roundoff finite-window shifts are unresolved.
+
+    At long windows the principal root numerically coincides with its
+    half-line limit. Returned floats are approximations, not certified
+    one-sided eigenvalue bounds or strict-capacity-boundary decisions.
+    """
     validate(r,S)
     if r==0:raise ValueError('The r=0 case is rank one; no root is needed.')
     if r>20 or S>50 or S<1e-4 or r<1e-6:
         raise ValueError('Floating-point Bessel solver tested only for 1e-6<=r<=20, 1e-4<=S<=50.')
-    lo=first_derivative_zero(2*r)
+    half_line=first_derivative_zero(2*r)
+    # The exact finite root lies ABOVE the exact half-line root. Starting at
+    # its floating approximation can nevertheless start just above both when
+    # the finite-window shift is below roundoff, skipping to the next mode.
+    # Pad left, and retain the actual last endpoint rather than hi-step.
+    lo=max(half_line-1e-10*max(1.,half_line),half_line/2)
     f0=boundary_determinant(lo,r,S)
-    if abs(f0)<1e-300:raise ArithmeticError('Underflow in boundary determinant.')
-    step=.05;hi=lo+step
-    limit=lo+100+10*np.sqrt(r/S)
+    if not np.isfinite(f0) or f0==0:raise ArithmeticError('Invalid boundary determinant bracket.')
+    step=.05;hi=half_line+step
+    limit=half_line+100+10*np.sqrt(r/S)
     while np.sign(boundary_determinant(hi,r,S))==np.sign(f0):
+        lo=hi
         hi+=step
         if hi>limit:raise ArithmeticError('First finite-window root not bracketed.')
-    return float(brentq(lambda x:boundary_determinant(x,r,S),hi-step,hi,xtol=2e-13,rtol=1e-14))
+    return float(brentq(lambda x:boundary_determinant(x,r,S),lo,hi,xtol=2e-14,rtol=1e-14))
 
 
 def finite_eigenvalue(r:float,S:float) -> float:
@@ -74,6 +97,9 @@ class FinitePulse:
         u=np.asarray(u,dtype=float)
         if self.r==0:return np.exp(-u/2)
         x=self.k*np.exp(-u/2)
+        # When the endpoint admixture underflows, its effect is unresolved
+        # in the normalized mode; do not form the spurious product 0*inf.
+        if self.coefficient==0:return np.exp(-u/2)*jv(2*self.r,x)
         return np.exp(-u/2)*(jv(2*self.r,x)+self.coefficient*yv(2*self.r,x))
     def __call__(self,u):
         x=np.asarray(u,dtype=float)

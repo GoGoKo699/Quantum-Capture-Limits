@@ -1,18 +1,18 @@
 {
   "status": "PASS",
-  "recorded_utc": "2026-10-15T15:27:29.354056+00:00",
-  "scope": "18 scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
-  "scientific_groups": 18,
+  "recorded_utc": "2026-10-15T15:56:53.984841+00:00",
+  "scope": "22 scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
+  "scientific_groups": 22,
   "structure": {
-    "python_files_parsed": 11,
-    "local_links_checked": 61
+    "python_files_parsed": 13,
+    "local_links_checked": 77
   },
   "suites": {
     "simulation": {
       "status": "PASS",
       "groups": 4,
       "versions": {
-        "python": "3.13.5",
+        "python": "3.12.14",
         "numpy": "2.3.5",
         "scipy": "1.17.0",
         "sympy": "1.14.0"
@@ -22,7 +22,7 @@
       "status": "PASS",
       "groups": 5,
       "versions": {
-        "python": "3.13.5",
+        "python": "3.12.14",
         "numpy": "2.3.5",
         "scipy": "1.17.0",
         "mpmath": "1.3.0"
@@ -32,7 +32,7 @@
       "status": "PASS",
       "groups": 5,
       "versions": {
-        "python": "3.13.5",
+        "python": "3.12.14",
         "numpy": "2.3.5",
         "scipy": "1.17.0",
         "sympy": "1.14.0",
@@ -43,23 +43,36 @@
       "status": "PASS",
       "groups": 4,
       "versions": {
-        "python": "3.13.5",
+        "python": "3.12.14",
         "numpy": "2.3.5",
         "scipy": "1.17.0"
+      }
+    },
+    "upper_bound": {
+      "status": "PASS",
+      "groups": 4,
+      "versions": {
+        "python": "3.12.14",
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "sympy": "1.14.0",
+        "mpmath": "1.3.0"
       }
     }
   },
   "source_sha256": {
     "capture/__init__.py": "d3bc24a0eacf0e346b164b8eaead7fb65fd54a5a42aaff4fe2f75069a081a7b7",
-    "capture/capacity.py": "1508f4e1e1fd4ca7aedab1d66e6addb48084e08f16dd8113c05c18dff892a85e",
-    "capture/finite_window.py": "3a48d74482acdc954443d0a1eca66c3ffa4ec4d249d84460cf37178605510e9b",
+    "capture/capacity.py": "5a7882a2cd94329b4869ce15e27b80033507cf62ed5e2ca775a22e422518c30a",
+    "capture/finite_window.py": "d8c724782160c6051fd18eeee5a46ec7f279ca069704dd3b48bc4b0da50b863d",
     "capture/objectives.py": "867cca59613bfa43ce58c033f94f453dd8e25da620ba5fff1379d735c1aeee4d",
     "capture/receiver.py": "030b932bb399883b19435a151c31a6094d7522e712cbea0db2e22d2dfcdae6f1",
     "capture/simulation.py": "8fe3093e145942fac21f7de5266fd1206b1de0e6371c20076b5c00d6c11761d7",
-    "tests/check_capacity.py": "e81334d7f3c8777c308257188a1d041ddc61883d69e9bbd7adab0c15e0ddc574",
-    "tests/check_control.py": "ac1badf69c399e8a5c85f38f647116c7410f899ee73f5f0b7e283beb20a7b77a",
+    "capture/upper_bound.py": "e499b1b5617b9da480c8510a6104aa603d8109d4e79846f76554c996bb7a82a3",
+    "tests/check_capacity.py": "b0079539cd57cd2718341db59d496ddceb01a8f6c01803c9a38717f0ca7d5f35",
+    "tests/check_control.py": "d7b46f91e73c5c35d4791fd4493faa55e8b096b03ad41a97ed649cfbd52dcea8",
     "tests/check_objectives.py": "2e583e99f923dc66e1f673371237db2b6197468d5f45b6fea18a2915312405ab",
     "tests/check_simulation.py": "71d7a8ecbfecf1eb4f1c910fce50293162ada89f6e4b5cff1d7a60cd3f4d2e50",
-    "tools/verify.py": "613538e2430acd0e8bb44ff24756ddd8ddb4b46ae07f38ff824e9047a7b2b3f3"
+    "tests/check_upper_bound.py": "4bea978390bd4a4881155eec35e9c60946f24e3148314036d1688ff468714c58",
+    "tools/verify.py": "7fae9d7040145863392da2528151a54db72b436054f6220c4fd3a2a56db19705"
   }
 }

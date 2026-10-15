@@ -75,4 +75,10 @@ For a fixed square photon, tunable coupling improves capture. Source-optimized m
 
 For quasistatic Gaussian detuning, the proposed residual phase-correlation matrix has a negative determinant. That invalidates this specific extension of the proof, not every conceivable simulator and not all channel ordering under colored noise.
 
-The clean reading order is now [model](model.md) → [proof](channel-simulation.md) → [counterexamples](counterexamples.md) → [capacity boundary](capacity-boundary.md) → [finite-time examples](finite-time.md). The [verification guide](../verification/README.md) connects each analytical claim to its independent checks.
+## 7. Separate a rate witness from a rate ceiling
+
+A positive coherent-information example proves that some communication rate is achievable. A very small example does not prove that every code is slow. To obtain a ceiling, let $\mu=\|A+|b\rangle\langle b|\|>1$ and attenuate the receiver's output with photon transmission $1/\mu$. The resulting comparison channel lies exactly on the antidegradable boundary. Its distance from the original receiver is at most $1-1/\mu$ in half diamond norm, including any reference system.
+
+An established continuity inequality then bounds the original receiver's full quantum capacity by a function that tends to zero with this distance. Read [Capacity upper bound](capacity-upper-bound.md) for the finite-code argument: it allows mixed encoders and infinitely many temporal modes without an additivity assumption. The comparison is a mathematical tool; it does not claim that adding attenuation improves capture.
+
+The reading order is [model](model.md) → [proof](channel-simulation.md) → [counterexamples](counterexamples.md) → [capacity boundary](capacity-boundary.md) → [capacity upper bound](capacity-upper-bound.md) → [finite-time examples](finite-time.md). The [verification guide](../verification/README.md) connects each analytical claim to its independent checks.

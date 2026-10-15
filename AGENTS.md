@@ -9,6 +9,7 @@ This repository concerns bounded-coupling, Markov-noisy, single-photon capture. 
 - Preserve vacuum coherence, trace preservation, reference entanglement and lost-photon vacuum weight. Never renormalize a retained photon subensemble.
 - The simulator is input preprocessing, not a claimed output degradation. Pointwise kernel inequalities are not automatically Loewner inequalities.
 - Channel ordering identifies an optimal schedule, not the positive capacity value. A coherent-information witness is a lower bound, not an optimized or regularized capacity. The p+|m|^2 criterion is attributed to established damping–dephasing results.
+- The antidegradable-comparison capacity upper bound covers regularized capacity but is not claimed tight. Its epsilon is HALF the diamond norm. Use exact spectra or spectral upper estimates; never use a Galerkin lower bound as an upper certificate. Attribute the continuity inequality to its established source.
 - A failed proposed simulator under colored noise does not prove that every simulator fails or that modulation has positive-capacity advantage there.
 
 ## Maintenance

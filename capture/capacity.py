@@ -7,7 +7,7 @@ maximizes p+|m|^2; it is NOT asserted to maximize the quantum-capacity value.
 """
 from __future__ import annotations
 import numpy as np
-from scipy.special import jvp
+from scipy.special import jv, jvp
 from scipy.optimize import brentq
 from capture.objectives import Pulse, _validate
 
@@ -17,11 +17,20 @@ def first_derivative_zero(order: float) -> float:
 
     The root tends to zero as order->0+. This is not the first positive zero
     of J_0', so order=0 must be handled by the rank-one noise-free limit.
-    Floating-point implementation is checked at r=.02 through 10.
+    Small orders are solved in x/sqrt(2*order), using the recurrence
+    order*J_order(x)-x*J_(order+1)(x)=0 to avoid cancellation between
+    nearly opposite Bessel orders. Sub-machine-precision spectral changes
+    cannot be resolved by this floating-point implementation.
     """
     if not np.isfinite(order) or order <= 0:
         raise ValueError('Require positive finite order.')
-    lo = max(1e-7, order)
+    if order < 1:
+        scale = np.sqrt(order)*np.sqrt(2.)
+        def scaled_residual(z):
+            x = scale*z
+            return jv(order, x)-(x/order)*jv(order+1, x)
+        return float(scale*brentq(scaled_residual, .5, 2., xtol=2e-14))
+    lo = order
     if jvp(order, lo) <= 0:
         raise ArithmeticError('Unexpected derivative sign below the first root.')
     hi = lo + .1
@@ -51,13 +60,19 @@ def boundary_metrics(r: float, beta: float = 1.) -> dict:
 
 
 def threshold_r(beta: float = 1.) -> float | None:
+    """Threshold, with zero included in the root bracket.
+
+    Near beta=1/2, floating-point cancellation in beta*Lambda-1 limits
+    relative accuracy; the returned number is not a sign certificate.
+    """
     _validate(0., beta)
     if beta <= .5:
         return None  # No positive-capacity region even at r=0.
     hi = 1.
     while boundary_metrics(hi, beta)['positive_capacity_margin'] > 0:
         hi *= 2
-    return float(brentq(lambda r: boundary_metrics(r, beta)['positive_capacity_margin'], 1e-8, hi, xtol=5e-13))
+    return float(brentq(lambda r: boundary_metrics(r, beta)['positive_capacity_margin'],
+                        0., hi, xtol=np.nextafter(0., 1.), rtol=1e-14))
 
 
 def exponential_metrics(a: float, r: float, beta: float = 1.) -> dict:

@@ -208,10 +208,33 @@ def thresholds_and_competitors():
         rows.append({'r':r,'best_exponential':exp,'population_optimal':population_pulse(r).metrics(),
                      'fidelity_optimal':weighted_pulse(r).metrics(),'boundary_optimal':boundary_metrics(r)})
     assert max(errors)<1e-10 and popcrit<expcrit<qcrit
+    # Independent high-precision derivative calculations cover the small-order
+    # root and the threshold below the old fixed r=1e-8 bracket endpoint.
+    small=[]
+    with mp.workdps(80):
+        for r0 in [1e-16,1e-12,1e-8]:
+            rmp=mp.mpf(r0);nu=2*rmp;scale=mp.sqrt(2*nu)
+            z=mp.findroot(lambda z:mp.diff(lambda x:mp.besselj(nu,x),scale*z),(.9,1.1))
+            root=scale*z;ref=8*rmp/root**2;got=boundary_metrics(r0)
+            relative_root_error=abs(got['derivative_zero']/float(root)-1)
+            eigenvalue_error=abs(got['kernel_largest_eigenvalue']-float(ref))
+            assert relative_root_error<3e-14 and eigenvalue_error<1e-13
+            small.append({'r':r0,'relative_root_error':relative_root_error,'eigenvalue_error':eigenvalue_error})
+        beta=.500000001;betamp=mp.mpf(beta);delta=betamp-mp.mpf('.5')
+        def threshold_derivative(z):
+            rmp=delta*z
+            return mp.diff(lambda x:mp.besselj(2*rmp,x),mp.sqrt(8*betamp*rmp))
+        ref=float(delta*mp.findroot(threshold_derivative,(1.,1.6)))
+        got=threshold_r(beta)
+        assert 0<got<1e-8 and abs(got/ref-1)<2e-6
+        assert boundary_metrics(.999*got,beta)['positive_capacity_margin']>0
+        assert boundary_metrics(1.001*got,beta)['positive_capacity_margin']<0
+        small.append({'beta':beta,'threshold':got,'high_precision_reference':ref,
+                      'relative_threshold_error':abs(got/ref-1)})
     return {'beta1_threshold_r':{'population_objective':popcrit,'fidelity_objective':fidelitycrit,
             'best_exponential_boundary_objective':expcrit,'unrestricted_boundary_objective':qcrit},
             'incident_fraction_thresholds':bp,'max_independent_exponential_objective_error':float(max(errors)),
-            'comparisons':rows,
+            'comparisons':rows,'small_parameter_regressions':small,
             'scope':'Zero/positive capacity is exact in the model. No quantum-capacity value is optimized here.'}
 
 

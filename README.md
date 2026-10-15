@@ -29,11 +29,20 @@ The receiver has controllable incident coupling $0\le g(t)\le g_{\max}$, fixed i
 | [Tutorial](docs/tutorial.md) | From photon excitation to a quantum channel and the two-clock proof |
 | [Simulation theorem](docs/channel-simulation.md) | Explicit CPTP preprocessing, zero-coupling intervals, and capacity ordering |
 | [Capacity boundary](docs/capacity-boundary.md) | Exact zero/positive boundary over all one-photon temporal encodings |
+| [Capacity upper bound](docs/capacity-upper-bound.md) | A bound on every unassisted code that vanishes at the boundary |
 | [Finite capture time](docs/finite-time.md) | Minimum window and a finite-pulse achievable-rate witness |
 | [Pulse objectives](docs/pulse-objectives.md) | Different optima for absorption, coherence, and qubit fidelity |
 | [References](docs/references.md) | Established ingredients and the precise scope of comparison |
 
 For perfect incident coupling, positive unassisted capacity is possible only below $\gamma_\phi/\Gamma_M=0.7358007967\ldots$, where $\Gamma_M=g_{\max}+\kappa$. The finite-window condition is $\beta\Lambda_r(\Gamma_M T)>1$; equality gives zero capacity. At $\beta=1$, $r=1/2$, a finite rising exponential of duration $\Gamma_M T=4$ certifies a lower bound of **0.02957015519 qubits per independent use**. It is not the exact capacity or a throughput per second.
+
+The capacity itself must tend to zero on approaching the boundary. Put $\mu=\beta\Lambda_r(S)$ and $\epsilon=\max\{0,1-1/\mu\}$. An explicit antidegradable comparison and an established continuity inequality give
+
+```math
+Q(\mathcal E_{\max})\le\min\{1,\;2\epsilon+(1+\epsilon)h_2(\epsilon/(1+\epsilon))\}.
+```
+
+Here $h_2$ is binary entropy in bits. This upper bound covers arbitrary temporal encodings and multi-use codes. It need not be tight; the [proof and examples](docs/capacity-upper-bound.md) distinguish it from achievable lower bounds.
 
 ## Reproduce
 
@@ -44,7 +53,7 @@ python -m pip install -r requirements.txt
 python tools/verify.py
 ```
 
-The verifier reruns four suites comprising 18 numerical/algebraic check groups, plus repository link and structure checks. Raw reports are generated in `artifacts/`. The [verification guide](verification/README.md) separates analytical proofs, finite tests, high-precision witnesses, and physical assumptions. No external dataset, account, or network access is needed after installing dependencies.
+The verifier reruns five suites comprising 22 numerical/algebraic check groups, plus repository link and structure checks. Raw reports are generated in `artifacts/`. The [verification guide](verification/README.md) separates analytical proofs, finite tests, high-precision witnesses, and physical assumptions. No external dataset, account, or network access is needed after installing dependencies.
 
 ## About
 

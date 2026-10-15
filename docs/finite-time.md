@@ -114,6 +114,8 @@ With beta=1 and r approaching r_c from below,
 
 The logarithmic coefficient is 0.4045959521. This is not a closing dynamical Liouvillian gap or a dissipative phase transition: it is the duration needed for a truncated input to retain enough of the optimal temporal mode to cross the channel criterion. The radiative/dephasing rates themselves remain finite. Near this boundary the achievable rate may still be extremely small, as shown in [Capacity boundary](capacity-boundary.md).
 
+The [capacity upper bound](capacity-upper-bound.md) also applies at each finite S. For fixed r and beta admitting a threshold $S_Q$, smoothness of the leading eigenvalue gives $Q=O((S-S_Q)\log(1/(S-S_Q)))$ as $S\downarrow S_Q$ from above. This bounds every unassisted code; it does not assert an exact rate law.
+
 ## A finite pulse with a non-tiny rate witness
 
 To separate the exact sign boundary from infinitesimal-rate examples, choose beta=1, r=1/2 and the ordinary rising exponential, written in lookback coordinates,

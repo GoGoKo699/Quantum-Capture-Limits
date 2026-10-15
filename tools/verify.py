@@ -17,7 +17,7 @@ import sys
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
-SUITES = (("simulation", 4), ("control", 5), ("capacity", 5), ("objectives", 4))
+SUITES = (("simulation", 4), ("control", 5), ("capacity", 5), ("objectives", 4), ("upper_bound", 4))
 
 
 def source_hashes():
@@ -81,7 +81,7 @@ def main():
     record = {
         "status": "PASS",
         "recorded_utc": datetime.now(timezone.utc).isoformat(),
-        "scope": "18 scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
+        "scope": f"{sum(n for _, n in SUITES)} scientific check groups plus structural checks. Analytical continuum proofs are not replaced by finite tests; no experimental validation or exact positive capacity value is asserted.",
         "scientific_groups": sum(n for _, n in SUITES),
         "structure": structure, "suites": results, "source_sha256": source_hashes(),
     }

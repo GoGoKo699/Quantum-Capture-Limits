@@ -20,15 +20,29 @@ Change coordinate to
 u=R(x),\qquad 0\le u\le U=R(T)\le S.
 ```
 
-Where $\Gamma>0$, use the inverse $x=x(u)$ and the isometry
+Let $A=\{x:\Gamma(x)>0\}$ and $Z=[0,T]\setminus A$. If $U=0$, then $g=0$ almost everywhere and the capture channel always outputs the ground state. Sending every input to vacuum gives the required simulator. In the remaining case $U>0$, use the generalized inverse
 
 ```math
-\psi(u)=\frac{f(x(u))}{\sqrt{\Gamma(x(u))}}.
+x(u)=\inf\{x\in[0,T]:R(x)>u\},\qquad 0<u<U.
 ```
 
-Extend its output by zero on $(U,S]$. This reshapes the incoming photon without adding an excitation. A deterministic phase mask multiplies $\psi(u)$ by $e^{-iD(x(u))}$.
+The monotone change-of-variable formula makes the following map an isometry from $L^2(A,dx)$ onto $L^2((0,U),du)$:
 
-If $g=\kappa=0$ on an interval, incoming components there never interact with the receiver. Discard that one-photon subspace to vacuum, including its coherence with the retained subspace, before making the isometry. The lost weight is retained in the vacuum population; it is not conditionally normalized away. The generalized inverse of R has jumps across those intervals. Those jumps are retained in the extra time below, so dephasing during an idle period is not omitted.
+```math
+(Vf)(u)=\frac{f(x(u))}{\sqrt{\Gamma(x(u))}},\qquad
+\int_0^U|(Vf)(u)|^2du=\int_A|f(x)|^2dx.
+```
+
+The denominator is positive almost everywhere in u; endpoint conventions and null sets do not affect the map. Extend V by zero on $(U,S]$. Write $P_A,P_Z$ for the photon-sector projections, extended by zero on vacuum, and set
+
+```math
+J=|\mathrm{vac}_{\rm out}\rangle\langle\mathrm{vac}_{\rm in}|+VP_A,
+\qquad
+\mathcal T_g(\rho)=J\rho J^\dagger+
+\operatorname{Tr}(P_Z\rho)|\mathrm{vac}_{\rm out}\rangle\langle\mathrm{vac}_{\rm out}|.
+```
+
+Since $J^\dagger J=I-P_Z$, this is a normal CPTP map. It discards completely uncoupled components and their coherences to vacuum, retaining their probability without conditional normalization. This covers arbitrary measurable zero sets, not only intervals. The inverse clock retains both jumps across zero-rate intervals and any singular-continuous part arising from more general zero sets. A deterministic phase mask then multiplies $Vf$ by $e^{-iD(x(u))}$.
 
 ### The two remaining penalties
 
@@ -45,19 +59,22 @@ and the excess physical time
 \boxed{d(u)=x(u)-\frac{u}{\Gamma_M}.}
 ```
 
-The coupling cap implies that d is nonnegative and nondecreasing. On smooth portions,
+The coupling cap proves monotonicity without any differentiability assumption on the inverse clock. For $0<u<v<U$,
 
 ```math
-d'(u)=\frac1{\Gamma(x(u))}-\frac1{\Gamma_M}\ge0.
+v-u=R(x(v))-R(x(u))
+\le\Gamma_M[x(v)-x(u)].
 ```
 
-Thus for any ordered u and v,
+Also $u=R(x(u))\le\Gamma_M x(u)$. Hence $0\le d(u)\le T$, d is nondecreasing, and
 
 ```math
 |x(u)-x(v)|=\frac{|u-v|}{\Gamma_M}+|d(u)-d(v)|.
 ```
 
 This additive identity is why the residual dephasing is an actual channel rather than merely a positive numerical penalty in one objective.
+
+The formulas for c and d apply on $(0,U)$. On the unused interval $(U,S]$, take $c=0$ and $d=d(U^-)$; the reshaped state has no photon weight there.
 
 The factor c is attenuation of the photon amplitude. Its trace-preserving channel on vacuum plus one photon is
 
@@ -67,7 +84,7 @@ The factor c is attenuation of the photon amplitude. Its trace-preserving channe
 \rho_{00}\mapsto\rho_{00}+\operatorname{Tr}[(I-C^2)\rho_{11}],
 ```
 
-where C multiplies wavefunctions by c(u). This is ordinary loss into an unobserved ancillary port, not postselection. If $\kappa=0$, c=1 wherever g>0: in that case the only loss added by this step is from completely uncoupled temporal components.
+where C multiplies wavefunctions by c(u). This is ordinary loss into an unobserved ancillary port, not postselection. If $\kappa=0$, c=1 on the retained support: the only photon loss introduced by the simulator is then the prior removal of completely uncoupled components.
 
 ### Extra waiting is a valid phase-noise channel, including vacuum coherence
 
@@ -78,7 +95,7 @@ V_B|\mathrm{vac}\rangle=|\mathrm{vac}\rangle,\qquad
 (V_B\psi)(u)=e^{i\sqrt{2\gamma_\phi}B_{d(u)}}\psi(u).
 ```
 
-Each $V_B$ is unitary on vacuum plus the one-photon space. Averaging $V_B\rho V_B^\dagger$ therefore gives a normal CPTP map. Its matrix elements satisfy
+Each $V_B$ is unitary on vacuum plus the one-photon space. Since d is measurable and bounded by T, the Wiener-path average exists in trace norm for every trace-class input. It gives a CPTP map with normal adjoint. Its matrix elements satisfy
 
 ```math
 \rho_{11}(u,v)\mapsto e^{-\gamma_\phi|d(u)-d(v)|}\rho_{11}(u,v),
@@ -115,7 +132,7 @@ Applying the adjoints of the attenuation and phase-noise channels to $h_M,K_M$ g
 
 Both sides are normal channels on the same finite-window vacuum-plus-one-photon space. Their equality extends to arbitrary trace-class input states and, by tensoring with identity, to inputs entangled with an arbitrary reference. The proof is independent of any finite temporal discretization.
 
-For a constant submaximum rate $g_0$, the interpretation is especially direct. Put $\Gamma_0=g_0+\kappa$, $\beta_0=g_0/\Gamma_0$. The input is compressed by $\Gamma_0/\Gamma_M$, its photon transmission probability is $\beta_0/\beta_M$, and the extra dephasing in exposure time has coefficient
+For a constant submaximum rate $g_0$ with $\Gamma_0=g_0+\kappa>0$, the interpretation is especially direct. Put $\beta_0=g_0/\Gamma_0$. The input is compressed by $\Gamma_0/\Gamma_M$, its photon transmission probability is $\beta_0/\beta_M$, and the extra dephasing in exposure time has coefficient
 
 ```math
 \gamma_\phi\left(\frac1{\Gamma_0}-\frac1{\Gamma_M}\right).
