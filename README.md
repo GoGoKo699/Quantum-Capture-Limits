@@ -16,22 +16,29 @@ The preparation compresses the temporal mode, attenuates it when inaccessible lo
 
 This identifies the optimal receiver schedule **without determining the capacity value**. The construction is proved in [Maximum-rate receiver simulation](docs/channel-simulation.md).
 
+Source/control interchange, integrated-control clocks, noiseless bounded-rate absorption, and the fixed-mode damping–dephasing capacity criterion have established precedents. The receiver-specific result here constructs the residual noisy input channel under a common coupling ceiling and fixed loss/dephasing. The [equation-level comparison](docs/prior-work.md) separates these claims and credits overlapping pulse formulas.
+
 ## The physical boundary
 
 The receiver has controllable incident coupling $0\le g(t)\le g_{\max}$, fixed inaccessible radiative loss $\kappa$, and fixed additional coherence-decay rate $\gamma_\phi$. Input states contain vacuum and at most one photon per independently reset use, with a shared phase reference. The output is the receiver qubit at the capture instant.
 
 **Free temporal source encoding and the specified Markov noise are essential.** Source bandwidth and conversion costs are not constrained. No transverse drives, extra receiving levels, bath records, or access to outgoing light are supplied. Read the [model and conventions](docs/model.md) before applying the theorem. For a prescribed square photon, bounded receiver modulation improves capture from 74.76% to 90.34%; that is a different task, shown in the [counterexamples](docs/counterexamples.md).
 
+The vacuum sector is essential: restricting every use to exactly one photon gives an entanglement-breaking channel into this two-level output, even with arbitrary temporal-mode encoding. The positive-capacity witnesses use vacuum–photon coherence. The [physical interpretation](docs/physical-scope.md) explains the source resources, controlled-noise assumptions and distinction between capture and storage.
+
 ## Reading path
 
 | Read | What it establishes |
 |---|---|
+| [Scientific synthesis](docs/scientific-synthesis.md) | Central claim, proof structure and consequences in one connected argument |
 | [Tutorial](docs/tutorial.md) | From photon excitation to a quantum channel and the two-clock proof |
 | [Simulation theorem](docs/channel-simulation.md) | Explicit CPTP preprocessing, zero-coupling intervals, and capacity ordering |
 | [Capacity boundary](docs/capacity-boundary.md) | Exact zero/positive boundary over all one-photon temporal encodings |
 | [Capacity upper bound](docs/capacity-upper-bound.md) | A bound on every unassisted code that vanishes at the boundary |
 | [Finite capture time](docs/finite-time.md) | Minimum window and a finite-pulse achievable-rate witness |
 | [Pulse objectives](docs/pulse-objectives.md) | Different optima for absorption, coherence, and qubit fidelity |
+| [Prior-work comparison](docs/prior-work.md) | Exact overlaps with earlier capture, shaping and channel results |
+| [Physical interpretation](docs/physical-scope.md) | Device relevance, source freedom, phase reference and observable distinctions |
 | [References](docs/references.md) | Established ingredients and the precise scope of comparison |
 
 For perfect incident coupling, positive unassisted capacity is possible only below $\gamma_\phi/\Gamma_M=0.7358007967\ldots$, where $\Gamma_M=g_{\max}+\kappa$. The finite-window condition is $\beta\Lambda_r(\Gamma_M T)>1$; equality gives zero capacity. At $\beta=1$, $r=1/2$, a finite rising exponential of duration $\Gamma_M T=4$ certifies a lower bound of **0.02957015519 qubits per independent use**. It is not the exact capacity or a throughput per second.

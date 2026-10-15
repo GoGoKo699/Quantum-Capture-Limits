@@ -10,11 +10,13 @@ The input map is normal, completely positive and trace preserving, never increas
 
 Assume measurable bounded incident coupling, integrable known detuning, fixed vacuum radiative loss and fixed Markov dephasing. Completely uncoupled measurable sets are discarded to vacuum; the accumulated-rate generalized inverse retains elapsed time across gaps. The finite-interval implementation below uses piecewise-constant schedules as tests, not as a restriction of the theorem.
 
+Optimized photon storage by adjusting either the input waveform or the control is established [G07L](references.md#g07l). Bounded-rate two-level capture also has an established noiseless optimized efficiency $1-\exp[-\int g(t)dt]$ [WMHS12, Eqs. (19)–(24)](references.md#wmhs12), which already makes maximum coupling optimal in that limit. The construction below addresses the additional question of exact channel simulation with fixed loss and Markov dephasing.
+
 ## Constructing the simulator
 
 ### Compress to accumulated radiative time
 
-Change coordinate to
+An accumulated-control coordinate already removes control dependence in the adiabatic cavity-memory equations [G07C, Sec. V.A, Eq. (15)](references.md#g07c). Here change to accumulated total radiative time,
 
 ```math
 u=R(x),\qquad 0\le u\le U=R(T)\le S.
@@ -110,6 +112,28 @@ The second line is essential. Preserving photon-sector populations alone would n
 This random-unitary representation is a mathematical implementation of the required dephasing channel; it does not assert that a particular laboratory bath is classical or reveal a noise record to the decoder. Attenuation remains a separate process and is not reclassified as classical phase noise.
 
 The simulator $\mathcal P_g$ is the composition of this phase channel, attenuation, known phase mask, and time-coordinate map. Every step is CPTP and photon-number nonincreasing.
+
+### The constructed preprocessor can mix a pure pulse
+
+Assume $\kappa=0$, $g(x)>0$ almost everywhere, and $\gamma_\phi>0$ on a finite window. There is then no discarded zero-rate sector and $c=1$ on the retained support. For a normalized pure photon, let $\psi\in L^2((0,U))$ be its normalized wavefunction after time compression and the known phase mask. The prepared photon state has kernel
+
+```math
+\rho_{\rm prep}(u,v)=\psi(u)\psi(v)^*
+ e^{-\gamma_\phi|d(u)-d(v)|},
+```
+
+and therefore
+
+```math
+\operatorname{Tr}\rho_{\rm prep}^2
+=\int_0^U\!du\int_0^U\!dv\,
+ |\psi(u)|^2|\psi(v)|^2
+ e^{-2\gamma_\phi|d(u)-d(v)|}\le1.
+```
+
+Equality holds precisely when $d$ is constant almost surely under the probability measure $|\psi(u)|^2du$: the integrand's exponential equals one almost surely exactly in that case. Otherwise the prepared state is mixed. For example, a constant rate $0<g_0<g_{\max}$ gives $d(u)=u(1/g_0-1/g_{\max})$, so every normalized $L^2$ pulse becomes mixed under this construction.
+
+This calculation explains why the exact simulator is more general than deterministic pure-waveform shaping. A standard source encoder may implement this CPTP map by discarding its ancillary system, without giving the receiver a noise record. The calculation describes this explicit simulator; it does not prove that every possible simulator must mix pure pulses.
 
 ### Direct proof of the channel identity
 
