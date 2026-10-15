@@ -4,6 +4,7 @@ The established ingredients are credited separately from the receiver-specific r
 
 | Subject | Established predecessor | Role here |
 |---|---|---|
+| Single tutorial anchor | [CKS17](#cks17) | Input–output dynamics, Fock-state coherences and loss; the local tutorial supplies the channel and capacity bridge |
 | Photon-sector dynamics | [B12](#b12) | Equations used for the independent receiver calculation |
 | Source/control interchange and effective time | [G07L](#g07l), [G07C](#g07c) | Earlier optimized-memory equivalence and integrated-control clock |
 | Bounded two-level absorption | [WMHS12](#wmhs12), [RG17](#rg17) | Finite-window noiseless optimum and constant-rate loss limit |
@@ -52,6 +53,11 @@ S. D. Bartlett, T. Rudolph, R. W. Spekkens, *Classical and quantum communication
 ## CJ14
 
 J. Chen, Z. Ji, D. Kribs, N. Lutkenhaus, B. Zeng, *Symmetric extension of two-qubit states*, Physical Review A 90, 032318 (2014). https://arxiv.org/abs/1310.3530 . DOI 10.1103/PhysRevA.90.032318.
+
+<a id="cks17"></a>
+## CKS17
+
+J. Combes, J. Kerckhoff, M. Sarovar, *The SLH framework for modeling quantum input-output networks*, Advances in Physics: X **2**, 784–888 (2017). DOI [10.1080/23746149.2017.1343097](https://doi.org/10.1080/23746149.2017.1343097). [arXiv:1611.00375v2](https://arxiv.org/abs/1611.00375v2); [PDF](https://arxiv.org/pdf/1611.00375v2). This is the single external teaching anchor for the [tutorial bridge](tutorial.md). The selected route uses PDF Secs. III–IV, V.A and V.D, VII.A.3, VII.B.1, VII.C, and Appendix A item 12. Equations (153)–(155) describe Fock-state coherences and their master equations; Eq. (A13) gives a two-level emitter coupled to guided and nonguided modes. Section and equation numbers refer to the PDF; the experimental HTML conversion numbers them differently. The review supplies the input–output framework, while the repository develops its specific noisy preprocessor and communication consequences.
 
 <a id="dmr15"></a>
 ## DMR15
