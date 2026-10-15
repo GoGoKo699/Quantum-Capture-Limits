@@ -23,6 +23,8 @@ m\rho_{10}&p\rho_{11}
 
 $p$ is excitation probability; $m$ is coherent transfer amplitude. They are not independent: complete positivity requires $|m|^2\le p\le1$. A receiver with high $p$ but small $m$ can be a poor qubit receiver.
 
+The distinction between particle survival and coherence with vacuum is established [AO07](references.md#ao07). Indeed, if every use is restricted to exactly one photon, this receiver produces only diagonal energy-basis outputs and the restricted channel is entanglement breaking. The vacuum sector supplies the coherent qubit degree of freedom in the positive-rate witnesses; see the [model](model.md#why-the-vacuum-sector-matters).
+
 After removing a known phase, the uniformly averaged qubit fidelity is $(3+p+2|m|)/6$. This is a single-use performance measure. The condition $p+|m|^2>1$ instead determines positive unassisted quantum capacity for this channel family. These criteria answer different questions; the latter uses coding over independent uses and is attributed in [Capacity boundary](capacity-boundary.md).
 
 **Check:** at $r=3$, a fidelity slightly above $2/3$ coexists with zero unassisted capacity for the entire allowed temporal receiver. This is not a contradiction and does not imply an entanglement-breaking channel.
@@ -52,6 +54,8 @@ The coupling ceiling makes $d$ nonnegative and nondecreasing. Therefore
 ```
 
 That equality permits the residual noise to be represented by an actual quantum channel. A mere inequality between kernels would be insufficient to establish full channel simulation.
+
+Integrated-control clocks already appear in optimized quantum memories [G07C](references.md#g07c). The additional step here is constructing the residual noise on vacuum and all temporal modes simultaneously, as explained in the [prior-work comparison](prior-work.md).
 
 Temporal reshaping preserves norm through the Jacobian $f(x(u))/\sqrt{g(x(u))+\kappa}$. Completely uncoupled components become vacuum; they are not conditionally discarded and renormalized. The generalized inverse retains time spent in gaps, so the proof does not forget dephasing while coupling is off.
 

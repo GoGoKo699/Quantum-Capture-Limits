@@ -20,7 +20,7 @@ A use has input support $[-T,0]$, with $0<T<\infty$ and the output qubit evaluat
 \mathcal H_T=\mathbb C|\mathrm{vac}\rangle\oplus L^2([0,T],dx),
 ```
 
-where $x=-t$ is lookback time. Codes may use arbitrary temporal modes and joint states across independently reset uses, with at most one photon in each use. Standard encoders may be channels, not only isometries into a single deterministic wavepacket. A shared phase reference is assumed for vacuum–one-photon coherence.
+where $x=-t$ is lookback time. Codes may use arbitrary temporal modes and joint states across independently reset uses, with **at most one photon in each use**, including coherent superpositions with vacuum. Standard encoders may be channels, not only isometries into a single deterministic wavepacket. A shared phase reference is assumed for vacuum–one-photon coherence. Restricting every use to exactly one photon gives a different, zero-capacity input restriction, as shown below.
 
 The comparison does not charge a source bandwidth, a temporal-mode conversion cost, a peak photon-flux limit, a coupling slew-rate limit, or a total integrated coupling budget. Maximum coupling throughout T is an allowed schedule. The preprocessing in [the proof](channel-simulation.md) can compress a waveform and increase its bandwidth; it must not be called a free operation when a bandwidth-limited or fixed source is the real resource model. Temporal conversion itself is a physical operation with implementation conditions, as studied in [DMR15](references.md#dmr15); no laboratory implementation of the simulator is asserted here.
 
@@ -58,6 +58,22 @@ A normalized pulse f gives $p=\langle f,K_gf\rangle$ and $m=\langle h_g,f\rangle
 ```
 
 The physical kernels obey $0\preceq|h_g\rangle\langle h_g|\preceq K_g\preceq I$. Thus this is a CPTP map. The entire map, rather than just the selected-mode damping–dephasing parameters, is used in the simulation proof.
+
+### Why the vacuum sector matters
+
+For a normalized input $\rho_{11}$ supported entirely in the one-photon temporal space, the restricted map is
+
+```math
+\mathcal E_g^{(1)}(\rho_{11})=
+\operatorname{Tr}[(I-K_g)\rho_{11}]|g\rangle\langle g|
++\operatorname{Tr}(K_g\rho_{11})|e\rangle\langle e|.
+```
+
+This measures the binary POVM $\{I-K_g,K_g\}$ and prepares the corresponding energy eigenstate. It is entanglement breaking and has zero unassisted quantum capacity, even with arbitrary temporal-mode encodings entangled across independently reset uses that each contain exactly one photon. Temporal interference can change the excitation probability, but cannot create off-diagonal coherence in this two-level output.
+
+The positive-capacity statements in this repository permit vacuum–photon coherence; their explicit witnesses encode in $\operatorname{span}\{|\mathrm{vac}\rangle,|1_f\rangle\}$. The fixed-one-photon-per-use restriction above does not describe a photon coherently shared across several uses, or global phase averaging of such a code. It is not a no-capacity claim for all protocols without a shared phase reference.
+
+### Maximum-rate reference channel
 
 For maximum coupling define
 

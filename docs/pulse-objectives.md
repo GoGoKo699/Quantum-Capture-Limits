@@ -224,7 +224,9 @@ p(a)=\frac{4\beta a}{(1+a)(1+a+2r)},\qquad
 m(a)=\frac{2\sqrt{\beta a}}{1+a+2r}.
 ```
 
-Optimizing population within this family gives a=sqrt(1+2r). Optimizing fidelity is a separate one-variable problem. At r=3, beta=1 its answer is a=4.86350965, with
+Optimizing population within this family gives $a=\sqrt{1+2r}$. For $\beta=1$, this population formula and its exponential-family optimum are established in [L22](references.md#l22), final supplementary Sec. S8, Eq. (S22). Their pulse $\xi(t)=\sqrt{2/\tau}e^{t/\tau}\Theta(-t)$ gives the present formula under $a=2/(\Gamma\tau)$ and $\gamma=\Gamma(1/2+r)$; their $\tau_{\rm opt}=\sqrt{2/(\gamma\Gamma)}$ becomes the same $a$. This identification uses their pure-dephasing limit: their combined linewidth parameter can also include nonradiative relaxation, which must be distinguished from pure dephasing as explained in [Physical interpretation](physical-scope.md#rates-must-describe-the-same-dynamics).
+
+Optimizing fidelity is a separate one-variable problem. At r=3, beta=1 its answer is a=4.86350965, with
 
 ```math
 p=0.27966553,\quad m=0.37178486,\quad
