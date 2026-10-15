@@ -9,6 +9,7 @@ The established ingredients are credited separately from the receiver-specific r
 | Channel comparison | [J21](#j21) | Operational consequences of a constructed CPTP preprocessor |
 | Controlled Markov noise | [GN17](#gn17), [BFH23](#bfh23) | Why uncontrolled T1/T2 do not specify all controlled dynamics |
 | Damping–dephasing capacity sign | [SAJS24](#sajs24), [CJ14](#cj14), [S21](#s21) | Established channel criterion, extension and entropy argument |
+| Capacity upper bound near the boundary | [LS09](#ls09), [SH17](#sh17) | Finite-output continuity applied to an explicitly attenuated antidegradable comparison channel |
 | Temporal shaping | [RG17](#rg17), [W11](#w11), [DMR15](#dmr15) | Excitation optima and physical costs of source conversion |
 
 The precise object to compare with these works is the full map $\mathcal E_{g,\Delta}=\mathcal E_{\max}\circ\mathcal P_{g,\Delta}$ on vacuum plus the entire one-photon temporal Hilbert space, with the coupling ceiling, source freedom, and fixed Markov noise retained. General data processing alone does not construct that map. Conversely, no new channel-comparison principle or qubit-capacity classification is asserted here.
@@ -55,6 +56,11 @@ A. Jenčová, *A General Theory of Comparison of Quantum Channels (and Beyond)*,
 
 P. Kurpiers et al., *Deterministic quantum state transfer and remote entanglement using microwave photons*, Nature **558**, 264–267 (2018), arXiv:1712.08593. DOI: 10.1038/s41586-018-0195-y. The absorption and process-fidelity values cited here come from its primary abstract and are not reinterpreted as this model's average fidelity. https://arxiv.org/abs/1712.08593 .
 
+<a id="ls09"></a>
+## LS09
+
+D. Leung, G. Smith, *Continuity of quantum channel capacities*, Communications in Mathematical Physics **292**, 201–215 (2009). DOI 10.1007/s00220-009-0833-1. https://arxiv.org/abs/0810.4931v2 . Theorem 11 supplies the channel-by-channel telescoping method; the sharper constant used here is from [SH17](#sh17).
+
 <a id="lsymm25"></a>
 ## LSYMM25
 
@@ -89,6 +95,11 @@ V. Siddhu, *Entropic singularities give rise to quantum transmission*, Nature Co
 ## SAJS24
 
 V. Siddhu, D. Abdelhadi, T. Jochym-O'Connor, J. Smolin, *Entanglement sharing across a damping-dephasing channel*, arXiv:2405.06231v2. https://arxiv.org/html/2405.06231v2 . Established capacity-sign criterion, entropic argument, and nonadditive-information context; no new general qubit-capacity classification is claimed.
+
+<a id="sh17"></a>
+## SH17
+
+M. E. Shirokov, *Tight uniform continuity bounds for the quantum conditional mutual information, for the Holevo quantity, and for capacities of quantum channels*, Journal of Mathematical Physics **58**, 102202 (2017). DOI 10.1063/1.4987135. https://arxiv.org/abs/1512.09047v7 . Proposition 3A, Eq. (45), bounds output mutual-information variation by $n[2\epsilon\log d_B+g_2(\epsilon)]$, with $\epsilon$ the half diamond distance; Proposition 11, Eq. (87), gives the capacity statement. The [receiver upper bound](capacity-upper-bound.md) applies Proposition 3A directly to finite-reference codes, so it does not require the infinite-input capacity-formula assumption stated in that preprint's footnote 10. Numbering here refers to arXiv v7.
 
 <a id="w11"></a>
 ## W11

@@ -5,9 +5,10 @@ Run `python tools/verify.py` from the repository root. Dependencies are pinned i
 | Suite | Groups | Independently checked content |
 |---|---:|---|
 | `tests/check_simulation.py` | 4 | CPTP preparation and receiver Kraus maps; every finite matrix unit; reference-entangled inputs; physical-time Fock equations versus exposure-time simulation; fixed-source example; failure of the proposed colored-noise residual |
-| `tests/check_control.py` | 5 | Finite Bessel spectrum versus integral/ODE calculations; arbitrary schedules; finite-mode extensions; minimum time and tail asymptotics; finite-pulse coherent information |
+| `tests/check_control.py` | 5 | Finite Bessel spectrum versus integral/ODE calculations, including long-window principal-root regressions; arbitrary schedules; finite-mode extensions; minimum time and tail asymptotics; finite-pulse coherent information |
 | `tests/check_capacity.py` | 5 | Channel extension algebra; continuum eigenfunctions; full matrix Fock equations; nested Galerkin bounds; all-mode extensions; high-precision small-input witnesses |
 | `tests/check_objectives.py` | 4 | Pulse eigenfunctions; scalar and full matrix dynamics; independent constrained optimization; exponential comparators and asymptotics |
+| `tests/check_upper_bound.py` | 4 | Exact amplitude-damping distance certificates; multimode antidegradable comparisons; continuity-bound evaluation and amplitude-damping capacity checks; finite/infinite-window examples and boundary scaling |
 
 Raw JSON reports are written to artifacts/ and include detailed tolerances and source hashes. They are regenerated, not substituted from a cache. `validated.json` is a compact record of an actual run; `python tools/verify.py --record` refreshes it only after all checks succeed. The verifier also checks syntax, local Markdown links, and stale exploration labels.
 
@@ -19,4 +20,4 @@ The code distinguishes radiative population decay from extra optical-coherence d
 
 ## Reproducible record
 
-The scientific engines are deduplicated in capture/. The four suites retain independently organized ODE, operator, quadrature, algebraic, and finite-space tests. `validated.json` records the versions and source hashes used. Changes in elapsed runtime do not signify a change in the scientific outputs. The full original-result comparison was performed during consolidation, excluding only metadata such as filenames, paths, hashes, and runtimes.
+The scientific engines are deduplicated in capture/. The five suites retain independently organized ODE, operator, quadrature, algebraic, and finite-space tests. `validated.json` records the versions and source hashes used. Changes in elapsed runtime do not signify a change in the scientific outputs. Numerical evaluations of analytical capacity upper bounds use floating-point continuum roots, not interval certificates; Galerkin lower bounds must never be substituted for spectral upper estimates.

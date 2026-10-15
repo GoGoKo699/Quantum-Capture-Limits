@@ -7,14 +7,14 @@ The model specifies the controlled dynamics, input resources, and capture instan
 The receiver is one two-level system, initially in $|g\rangle$. Its incident-port population-decay rate $g(t)$ is controllable within
 
 ```math
-0\le g(t)\le g_{\max}.
+0\le g(t)\le g_{\max},\qquad 0<g_{\max}<\infty.
 ```
 
 An inaccessible vacuum port has fixed population-decay rate $\kappa\ge0$. A fixed Markov dephasing process adds optical-coherence decay rate $\gamma_\phi\ge0$. The dissipators are $g(t)\mathcal D[\sigma_-]$, $\kappa\mathcal D[\sigma_-]$, and $2\gamma_\phi\mathcal D[|e\rangle\langle e|]$. A known detuning $\Delta(t)|e\rangle\langle e|$ and known incident-coupling phase are allowed. Known phase factors can be absorbed into the input temporal mode.
 
 These are white-noise, Markov, rotating-wave dynamics for **every allowed schedule**, not merely a fit of the uncontrolled receiver's T1 and T2. The photon-sector equations are standard Fock-wavepacket dynamics [B12](references.md#b12). A reduced free-evolution semigroup alone does not generally specify controlled dynamics; the dilation caveat is important [GN17](references.md#gn17) and [BFH23](references.md#bfh23).
 
-A use has input support $[-T,0]$, with the output qubit evaluated at time 0. Inputs belong to
+A use has input support $[-T,0]$, with $0<T<\infty$ and the output qubit evaluated at time 0. Inputs belong to
 
 ```math
 \mathcal H_T=\mathbb C|\mathrm{vac}\rangle\oplus L^2([0,T],dx),

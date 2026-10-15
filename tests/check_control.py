@@ -44,8 +44,32 @@ def spectral_checks():
         rows.append(met)
     assert max(normerr+eigenerr)<1e-10
     assert max(odeerr)<5e-9
+    # At long windows the principal Bessel root approaches its half-line
+    # limit below floating precision. Starting a bracket at that rounded
+    # root used to skip the principal mode and falsely report Q=0, e.g.
+    # r=.5,S=20 gave Lambda=.1407 instead of 1.17996.
+    long_window=[]
+    for r in [1e-6,1e-4,.01,.02,.1,.3,.5,20.]:
+        limit=boundary_metrics(r)['kernel_largest_eigenvalue'];previous=0.
+        for S in [2.,10.,20.,30.,40.,50.]:
+            value=finite_eigenvalue(r,S)
+            # Roundoff is allowed; these floats do not certify which side of
+            # an unresolved strict continuum boundary a parameter lies on.
+            assert previous<=value+2e-9 and value<=limit+2e-9,(r,S,value,previous,limit)
+            if S>=30:assert abs(value-limit)<2e-9,(r,S,value,limit)
+            long_window.append({'r':r,'S':S,'largest_kernel_eigenvalue':value,
+                                'half_line_minus_finite':float(limit-value)})
+            previous=value
+    assert finite_eigenvalue(.5,20.)>1.
+    # The Y admixture can underflow while Y itself overflows in the far
+    # tail. The normalized principal pulse and its channel stay finite.
+    far_tail=FinitePulse(20.,50.);far_metrics=far_tail.metrics()
+    assert np.isfinite([far_tail(0.),far_tail(50.),far_metrics['population'],
+                        far_metrics['coherence_amplitude']]).all()
+    assert abs(quad(lambda u:float(far_tail(u))**2,0,50.,epsabs=2e-12)[0]-1)<1e-10
     return {'max_pulse_norm_error':float(max(normerr)),'max_integral_eigenfunction_error':float(max(eigenerr)),
-            'max_independent_ODE_normalized_Neumann_error':float(max(odeerr)),'finite_pulses':rows,'nested_exact_cell_lower_bounds':gaps}
+            'max_independent_ODE_normalized_Neumann_error':float(max(odeerr)),'finite_pulses':rows,
+            'nested_exact_cell_lower_bounds':gaps,'long_window_principal_mode_regression':long_window}
 
 
 def controlled_dynamics_checks():

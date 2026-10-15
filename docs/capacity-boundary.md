@@ -266,6 +266,8 @@ I_c=2.7362773681\ldots\times10^{-19}
 
 These are achievable lower bounds. They are **not upper bounds** on the capacity and do not exclude more effective inputs or multi-use codes. We have not solved that optimization. They nevertheless prevent a practical-rate claim from being supported merely by the sign switch. A standard double-precision entropy scan can miss such positivity altogether; the analytic criterion and high-precision witnesses distinguish a true zero from a positive number below ordinary numerical resolution. Entropic singularities and very small positive transmission witnesses are established phenomena [S21, SAJS24].
 
+There is also an independent [upper bound on the full capacity](capacity-upper-bound.md). With $\delta=\beta\Lambda_r(S)-1>0$, it gives $Q=O(\delta\log(1/\delta))$ as the boundary is approached. Thus all codes have vanishing rate there, although the upper bound and these achievable witnesses do not determine the exact rate or its scaling.
+
 The $r=3$ [fidelity example](pulse-objectives.md) illustrates another distinction. Its fidelity-optimal pulse has average fidelity 0.670674>2/3, but the full receiver has
 
 ```math
