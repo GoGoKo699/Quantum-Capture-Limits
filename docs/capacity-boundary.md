@@ -26,9 +26,9 @@ K_r(u,v)=e^{-(u+v)/2-r|u-v|},\qquad
 h_r(u)=e^{-(r+1/2)u},\qquad\|f\|_2=1.
 ```
 
-Complete positivity follows from $K_r-|h_r\rangle\langle h_r|\succeq0$; [Pulse objectives](pulse-objectives.md) supplies its Gram representation. Also $K_r\succeq0$ and $\operatorname{Tr}K_r=1$. Therefore $0\le |m|^2\le p\le\beta$. A known phase can make $m\ge0$ without changing any result below.
+Complete positivity follows from $`K_r-|h_r\rangle\langle h_r|\succeq0`$; [Pulse objectives](pulse-objectives.md) supplies its Gram representation. Also $`K_r\succeq0`$ and $`\mathrm{Tr}K_r=1`$. Therefore $`0\le |m|^2\le p\le\beta`$. A known phase can make $`m\ge0`$ without changing any result below.
 
-This is the established damping–dephasing channel [MSG24](references.md#msg24), [SAJS24](references.md#sajs24). In SAJS24's convention its damping probability is $g=1-p$ and its phase-flip probability is $d=(1-m/\sqrt p)/2$ when $p>0$; here $d$ avoids confusing their phase-flip parameter with our capture probability $p$. In MSG24's qubit restriction the parameters are $\lambda=p$ and $e^{-\gamma}=m^2/p$, with complete dephasing understood as a limit. When $p=0$ the output is always the ground state. The condition below is not a new classification of this channel family.
+This is the established damping–dephasing channel [MSG24](references.md#msg24), [SAJS24](references.md#sajs24). In SAJS24's convention its damping probability is $`g=1-p`$ and its phase-flip probability is $`d=(1-m/\sqrt p)/2`$ when $`p>0`$; here $`d`$ avoids confusing their phase-flip parameter with our capture probability $`p`$. In MSG24's qubit restriction the parameters are $`\lambda=p`$ and $`e^{-\gamma}=m^2/p`$, with complete dephasing understood as a limit. When $`p=0`$ the output is always the ground state. The condition below is not a new classification of this channel family.
 
 ### Exact zero/positive test
 
@@ -38,7 +38,7 @@ This is the established damping–dephasing channel [MSG24](references.md#msg24)
 
 The zero side is the exact qubit antidegradability condition in [MSG24, Theorem 2 and Appendix B.2.2, Theorem 38, Proof 3](references.md#msg24). The positive side is [SAJS24, Lemma 1, Eq. (24)](references.md#sajs24). We supply explicit calculations to connect those established statements to the receiver parameters and to the all-mode extension below.
 
-**Zero side.** MSG24's condition $\lambda\le1/(1+e^{-\gamma})$ becomes $p+m^2\le1$. In this region define a two-output channel with Kraus operators (output order 00,01,10,11)
+**Zero side.** MSG24's condition $`\lambda\le1/(1+e^{-\gamma})`$ becomes $`p+m^2\le1`$. In this region define a two-output channel with Kraus operators (output order 00,01,10,11)
 
 ```math
 F_0=|00\rangle\langle0|
@@ -50,18 +50,18 @@ F_1=\sqrt{p-m^2}|11\rangle\langle1|,
 F_2=\sqrt{1-p-m^2}|00\rangle\langle1|.
 ```
 
-They satisfy $\sum_jF_j^\dagger F_j=I$. Tracing out either output gives exactly $\mathcal E_f$. Such an extension is equivalent to antidegradability: the environment can simulate the receiver. A positive unassisted transmission rate would then permit asymptotically faithful decoding by two receivers, contradicting no-cloning. The extension broadcasts the *noisy channel output*, not two perfect copies of the input state.
+They satisfy $`\sum_jF_j^\dagger F_j=I`$. Tracing out either output gives exactly $`\mathcal E_f`$. Such an extension is equivalent to antidegradability: the environment can simulate the receiver. A positive unassisted transmission rate would then permit asymptotically faithful decoding by two receivers, contradicting no-cloning. The extension broadcasts the *noisy channel output*, not two perfect copies of the input state.
 
 As an independent check, the normalized Choi state has zero determinant, and
 
 ```math
-\operatorname{Tr}(J_B^2)-\operatorname{Tr}(J_{AB}^2)
+\mathrm{Tr}(J_B^2)-\mathrm{Tr}(J_{AB}^2)
 =\frac{1-p-m^2}{2}.
 ```
 
 The two-qubit symmetric-extension criterion [CJ14, Theorem 1](references.md#cj14) gives the same antidegradability region. This is the criterion used for the qubit restriction in MSG24; it is not a criterion for arbitrary-dimensional Choi states.
 
-**Positive side.** For $\rho_q=\operatorname{diag}(1-q,q)$, write $s=m^2$. The environment has eigenvalues
+**Positive side.** For $`\rho_q=\mathrm{diag}(1-q,q)`$, write $`s=m^2`$. The environment has eigenvalues
 
 ```math
 e_0=(1-p)q,\qquad
@@ -69,13 +69,13 @@ e_0=(1-p)q,\qquad
 \quad t=1-(1-p)q.
 ```
 
-The receiver eigenvalues are $pq$ and $1-pq$. The coherent information obeys
+The receiver eigenvalues are $`pq`$ and $`1-pq`$. The coherent information obeys
 
 ```math
 I_c(q)=[p+s-1]q\log_2(1/q)+O(q).
 ```
 
-It is positive for sufficiently small nonzero $q$ when $p+s>1$. Positive coherent information is an achievable unassisted quantum-communication rate. This is the established logarithmic-entropy method: [SAJS24, Lemma 1, Eqs. (24)–(25)](references.md#sajs24) compares these same output and environment singularities. Their condition $g<1-1/[2(1-2d(1-d))]$ becomes $p+m^2>1$ under the mapping above.
+It is positive for sufficiently small nonzero $`q`$ when $`p+s>1`$. Positive coherent information is an achievable unassisted quantum-communication rate. This is the established logarithmic-entropy method: [SAJS24, Lemma 1, Eqs. (24)–(25)](references.md#sajs24) compares these same output and environment singularities. Their condition $`g<1-1/[2(1-2d(1-d))]`$ becomes $`p+m^2>1`$ under the mapping above.
 
 For checking very small numbers, retain the linear coefficient:
 
@@ -90,23 +90,23 @@ No optimization over all input states or multiple copies is needed to prove posi
 
 ## A stronger statement: arbitrary temporal encoding in the one-photon sector
 
-Let $\mathcal H_1=L^2([0,\infty))$ be the one-photon temporal space. A general input on $\mathbb C|\mathrm{vac}\rangle\oplus\mathcal H_1$ has block form
+Let $`\mathcal H_1=L^2([0,\infty))`$ be the one-photon temporal space. A general input on $`\mathbb C|\mathrm{vac}\rangle\oplus\mathcal H_1`$ has block form
 
 ```math
 \rho=\begin{pmatrix}\rho_{00}&\rho_{01}\\\rho_{10}&\rho_{11}\end{pmatrix}.
 ```
 
-Define $A=\beta K_r$ and $|b\rangle=\sqrt\beta|h_r\rangle$. By polarization of the one-photon response, the receiver map is
+Define $`A=\beta K_r`$ and $`|b\rangle=\sqrt\beta|h_r\rangle`$. By polarization of the one-photon response, the receiver map is
 
 ```math
 \mathcal E(\rho)=
 \begin{pmatrix}
-\rho_{00}+\operatorname{Tr}[(I-A)\rho_{11}]&\rho_{01}|b\rangle\\
-\langle b|\rho_{10}&\operatorname{Tr}(A\rho_{11})
+\rho_{00}+\mathrm{Tr}[(I-A)\rho_{11}]&\rho_{01}|b\rangle\\
+\langle b|\rho_{10}&\mathrm{Tr}(A\rho_{11})
 \end{pmatrix}.
 ```
 
-The operator inequalities $0\preceq|b\rangle\langle b|\preceq A\preceq I$ guarantee complete positivity. More generally, this form describes a vacuum-preserving qubit-output channel with no coherence generated by fixed-one-photon inputs. Its finite-mode versions are special cases of the excitation-damping construction and complete-positivity condition in [LC23, Theorem 2.1](references.md#lc23): embed the output excitation in a vector $e_0$, take $\phi(X)=\operatorname{Tr}(AX)|e_0\rangle\langle e_0|$, and set the coherence operator to $|e_0\rangle\langle b|$. We use an explicit countable Kraus construction below for the continuum input space.
+The operator inequalities $`0\preceq|b\rangle\langle b|\preceq A\preceq I`$ guarantee complete positivity. More generally, this form describes a vacuum-preserving qubit-output channel with no coherence generated by fixed-one-photon inputs. Its finite-mode versions are special cases of the excitation-damping construction and complete-positivity condition in [LC23, Theorem 2.1](references.md#lc23): embed the output excitation in a vector $`e_0`$, take $`\phi(X)=\mathrm{Tr}(AX)|e_0\rangle\langle e_0|`$, and set the coherence operator to $`|e_0\rangle\langle b|`$. We use an explicit countable Kraus construction below for the continuum input space.
 
 If
 
@@ -114,7 +114,7 @@ If
 A+|b\rangle\langle b|\preceq I,
 ```
 
-there is an explicit all-mode broadcast extension. Choose an orthonormal basis $\{|j\rangle\}$ of $\mathcal H_1$ and set
+there is an explicit all-mode broadcast extension. Choose an orthonormal basis $`\{|j\rangle\}`$ of $`\mathcal H_1`$ and set
 
 ```math
 F_0=|00\rangle\langle\mathrm{vac}|
@@ -126,15 +126,15 @@ F_{1j}=|11\rangle\langle j|\sqrt{A-|b\rangle\langle b|},
 F_{2j}=|00\rangle\langle j|\sqrt{I-A-|b\rangle\langle b|}.
 ```
 
-The countable Kraus sum is trace preserving, and both receiver marginals equal $\mathcal E$. Hence the entire input channel is antidegradable, including every temporal encoding and every entangled code over independent uses.
+The countable Kraus sum is trace preserving, and both receiver marginals equal $`\mathcal E`$. Hence the entire input channel is antidegradable, including every temporal encoding and every entangled code over independent uses.
 
-If the inequality fails, there is a normalized $f$ for which
+If the inequality fails, there is a normalized $`f`$ for which
 
 ```math
 \langle f,(A+|b\rangle\langle b|)f\rangle>1.
 ```
 
-The subspace $\operatorname{span}\{|\mathrm{vac}\rangle,|1_f\rangle\}$ then has positive capacity by the fixed-mode criterion above. Thus the general operator inequality is both necessary and sufficient for the zero-capacity side in this channel class. This conclusion does not rely on a finite discretization or on assuming that a particular pulse is optimal.
+The subspace $`\mathrm{span}\{|\mathrm{vac}\rangle,|1_f\rangle\}`$ then has positive capacity by the fixed-mode criterion above. Thus the general operator inequality is both necessary and sufficient for the zero-capacity side in this channel class. This conclusion does not rely on a finite discretization or on assuming that a particular pulse is optimal.
 
 The countable extension applies the channel arguments to the full temporal input space, including arbitrary superpositions of modes.
 
@@ -154,7 +154,7 @@ L_r(u,v)=e^{-(u+v)/2}
 \left[e^{-r|u-v|}+e^{-r(u+v)}\right].
 ```
 
-The second exponential changes the boundary condition of the integral equation. If $L_rf=\Lambda f$ and
+The second exponential changes the boundary condition of the integral equation. If $`L_rf=\Lambda f`$ and
 
 ```math
 g(u)=\int_0^\infty
@@ -168,7 +168,7 @@ g''-r^2g=-\frac{2r}{\Lambda}e^{-u}g,
 \qquad g'(0)=0.
 ```
 
-Setting $x=\sqrt{8r/\Lambda}e^{-u/2}$ gives Bessel's equation of order $\nu=2r$. Decay at $u=\infty$ selects $J_\nu$. The Neumann condition gives $J_\nu'(x_0)=0$, and the leading eigenvalue is
+Setting $`x=\sqrt{8r/\Lambda}e^{-u/2}`$ gives Bessel's equation of order $`\nu=2r`$. Decay at $`u=\infty`$ selects $`J_\nu`$. The Neumann condition gives $`J_\nu'(x_0)=0`$, and the leading eigenvalue is
 
 ```math
 \Lambda(r)=\frac{8r}{[j'_{2r,1}]^2}.
@@ -182,7 +182,7 @@ f_Q(u)=
 {\sqrt{J_{2r}(x_0)^2-J_{2r-1}(x_0)J_{2r+1}(x_0)}}.
 ```
 
-At $r=0$, $L_0=2|h_0\rangle\langle h_0|$, $f_Q=e^{-u/2}$, and $\Lambda=2$. The first derivative zero for positive order tends to zero as $r$ approaches zero; substituting the first strictly positive zero of $J_0'$ would give the wrong limit.
+At $`r=0`$, $`L_0=2|h_0\rangle\langle h_0|`$, $`f_Q=e^{-u/2}`$, and $`\Lambda=2`$. The first derivative zero for positive order tends to zero as $`r`$ approaches zero; substituting the first strictly positive zero of $`J_0'`$ would give the wrong limit.
 
 The Bessel recurrence at the derivative root yields useful scalar metrics:
 
@@ -191,11 +191,11 @@ m_Q^2=\frac{\beta\Lambda^2}{4-2r\Lambda},
 \qquad p_Q=\beta\Lambda-m_Q^2.
 ```
 
-This pulse maximizes the *margin* $p+m^2-1$ and determines whether any encoding succeeds. It is not claimed to maximize $Q$ itself. In particular, it differs from the average-fidelity-optimal pulse of the pulse-objective analysis.
+This pulse maximizes the *margin* $`p+m^2-1`$ and determines whether any encoding succeeds. It is not claimed to maximize $`Q`$ itself. In particular, it differs from the average-fidelity-optimal pulse of the pulse-objective analysis.
 
-The largest eigenvalue decreases strictly with $r$. Although pointwise monotonicity of kernels does not in general imply operator order, here it suffices: the positive maximizing eigenfunction at the larger $r$ has strictly larger Rayleigh quotient in the smaller-$r$ kernel. Also $\Lambda$ tends to zero at strong dephasing; a Schur bound on $K_r$ plus $\|h_r\|^2$ gives this limit. Consequently every $\beta>1/2$ has a unique threshold; $\beta\le1/2$ has no positive-capacity region even in the noise-free limit.
+The largest eigenvalue decreases strictly with $`r`$. Although pointwise monotonicity of kernels does not in general imply operator order, here it suffices: the positive maximizing eigenfunction at the larger $`r`$ has strictly larger Rayleigh quotient in the smaller-$`r`$ kernel. Also $`\Lambda`$ tends to zero at strong dephasing; a Schur bound on $`K_r`$ plus $`\|h_r\|^2`$ gives this limit. Consequently every $`\beta>1/2`$ has a unique threshold; $`\beta\le1/2`$ has no positive-capacity region even in the noise-free limit.
 
-| Incident fraction $\beta$ | Largest $r$ allowing positive capacity (strictly below the endpoint) |
+| Incident fraction $`\beta`$ | Largest $`r`$ allowing positive capacity (strictly below the endpoint) |
 |---:|---:|
 | 0.50 | None |
 | 0.55 | 0.06761278 |
@@ -208,12 +208,12 @@ These are parameter thresholds of the stated model, not experimentally validated
 
 ## A pulse can absorb less yet change zero capacity to positive capacity
 
-At $r=0.72$ and $\beta=1$:
+At $`r=0.72`$ and $`\beta=1`$:
 
-| Temporal pulse | Population $p$ | Coherence $m$ | $p+m^2$ | Unassisted $Q$ |
+| Temporal pulse | Population $`p`$ | Coherence $`m`$ | $`p+m^2`$ | Unassisted $`Q`$ |
 |---|---:|---:|---:|---|
 | Population optimum | 0.61668899 | 0.61668899 | 0.99699430 | Exactly zero |
-| Ordinary exponential $f(u)=\sqrt2e^{-u}$ | 0.60060060 | 0.63703314 | 1.00641182 | Strictly positive |
+| Ordinary exponential $`f(u)=\sqrt2e^{-u}`$ | 0.60060060 | 0.63703314 | 1.00641182 | Strictly positive |
 | Exact boundary-margin optimum | 0.60926569 | 0.63317689 | 1.01017866 | Strictly positive |
 
 For the elementary exponential, the criterion is exact rational arithmetic:
@@ -225,35 +225,35 @@ p+m^2-1=\frac{79}{12321}>0.
 
 The population-optimal pulse is certified globally by the [population kernel spectrum](pulse-objectives.md), not just within exponentials. Reducing its population by changing the temporal mode can make coherent communication possible. The numerical separation is robust at the level of the sign criterion; no delicate cancellation in an entropy calculation is needed to establish it.
 
-At $\beta=1$, the thresholds are:
+At $`\beta=1`$, the thresholds are:
 
-| Pulse selection rule | Positive-capacity threshold $r$ |
+| Pulse selection rule | Positive-capacity threshold $`r`$ |
 |---|---:|
 | Maximize population | 0.7154844683 |
 | Best boundary objective among rising exponentials | 0.7313754032 |
 | Maximize average fidelity over all shapes | 0.7344094125 |
 | Maximize the exact capacity-boundary margin | 0.7358007967 |
 
-For an exponential $f_a=\sqrt a\,e^{-au/2}$, the objective is
+For an exponential $`f_a=\sqrt a\,e^{-au/2}`$, the objective is
 
 ```math
 p+m^2=\frac{4\beta a(2a+c+1)}{(a+1)(a+c)^2},\qquad c=1+2r.
 ```
 
-Its stationary polynomial is $2a^3+2a^2+(1-3c)a-c^2-c=0$. For $c\ge1$ there is exactly one positive root, and the objective vanishes at both endpoints. This proves the exponential-family global optimum. The extension from that family to the exact boundary is only about 0.6% in $r$. The channel-ordering theorem, rather than a large advantage from complicated pulse shapes, is the central result.
+Its stationary polynomial is $`2a^3+2a^2+(1-3c)a-c^2-c=0`$. For $`c\ge1`$ there is exactly one positive root, and the objective vanishes at both endpoints. This proves the exponential-family global optimum. The extension from that family to the exact boundary is only about 0.6% in $`r`$. The channel-ordering theorem, rather than a large advantage from complicated pulse shapes, is the central result.
 
 ## Achievable rates near the boundary
 
 The small-input proof certifies positive rates close to the boundary. The full entropy formulas below are checked at both 90 and 140 decimal digits.
 
-For the elementary $r=0.72$ exponential and $\rho_q=\operatorname{diag}(1-q,q)$, $q=10^{-26}$ gives
+For the elementary $`r=0.72`$ exponential and $`\rho_q=\mathrm{diag}(1-q,q)`$, $`q=10^{-26}`$ gives
 
 ```math
 I_c=1.6246241910\ldots\times10^{-28}
 \quad\text{qubits per independent use}.
 ```
 
-For the exact boundary-margin pulse at the same $r$, the explicit choice
+For the exact boundary-margin pulse at the same $`r`$, the explicit choice
 
 ```math
 q=1.8633516299\ldots\times10^{-17}
@@ -268,12 +268,12 @@ I_c=2.7362773681\ldots\times10^{-19}
 
 These are achievable lower bounds for the specified inputs. A standard double-precision entropy scan can miss such positivity; the analytic criterion and high-precision witnesses distinguish a true zero from a positive number below ordinary numerical resolution. Entropic singularities and very small positive transmission witnesses are established phenomena [S21, SAJS24].
 
-There is also an independent [upper bound on the full capacity](capacity-upper-bound.md). With $\delta=\beta\Lambda_r(S)-1>0$, it gives $Q=O(\delta\log(1/\delta))$ as the boundary is approached. Thus all codes have vanishing rate there, although the upper bound and these achievable witnesses do not determine the exact rate or its scaling.
+There is also an independent [upper bound on the full capacity](capacity-upper-bound.md). With $`\delta=\beta\Lambda_r(S)-1>0`$, it gives $`Q=O(\delta\log(1/\delta))`$ as the boundary is approached. Thus all codes have vanishing rate there, although the upper bound and these achievable witnesses do not determine the exact rate or its scaling.
 
-The $r=3$ [fidelity example](pulse-objectives.md) illustrates another distinction. Its fidelity-optimal pulse has average fidelity $0.670674>2/3$, but the full receiver has
+The $`r=3`$ [fidelity example](pulse-objectives.md) illustrates another distinction. Its fidelity-optimal pulse has average fidelity $`0.670674>2/3`$, but the full receiver has
 
 ```math
 \Lambda(3)=0.4265226440\ldots<1.
 ```
 
-Thus every allowed temporal encoding has zero unassisted capacity there, despite the fidelity benchmark being exceeded. This is not a contradiction: single-shot uniform-qubit fidelity and asymptotic unassisted communication are different tasks. Nor does zero capacity here imply an entanglement-breaking channel. The single-rail Choi state remains non-positive under partial transpose when $m$ is nonzero; assisted entanglement protocols are a different resource setting.
+Thus every allowed temporal encoding has zero unassisted capacity there, despite the fidelity benchmark being exceeded. This is not a contradiction: single-shot uniform-qubit fidelity and asymptotic unassisted communication are different tasks. Nor does zero capacity here imply an entanglement-breaking channel. The single-rail Choi state remains non-positive under partial transpose when $`m`$ is nonzero; assisted entanglement protocols are a different resource setting.
