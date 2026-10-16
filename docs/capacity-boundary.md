@@ -126,9 +126,9 @@ F_{1j}=|11\rangle\langle j|\sqrt{A-|b\rangle\langle b|},
 F_{2j}=|00\rangle\langle j|\sqrt{I-A-|b\rangle\langle b|}.
 ```
 
-The countable Kraus sum is trace preserving, and both receiver marginals equal E. Hence the entire input channel is antidegradable, including every temporal encoding and every entangled code over independent uses.
+The countable Kraus sum is trace preserving, and both receiver marginals equal $\mathcal E$. Hence the entire input channel is antidegradable, including every temporal encoding and every entangled code over independent uses.
 
-If the inequality fails, there is a normalized f for which
+If the inequality fails, there is a normalized $f$ for which
 
 ```math
 \langle f,(A+|b\rangle\langle b|)f\rangle>1.
@@ -154,7 +154,7 @@ L_r(u,v)=e^{-(u+v)/2}
 \left[e^{-r|u-v|}+e^{-r(u+v)}\right].
 ```
 
-The second exponential changes the boundary condition of the integral equation. If L_rf=Lambda f and
+The second exponential changes the boundary condition of the integral equation. If $L_rf=\Lambda f$ and
 
 ```math
 g(u)=\int_0^\infty
@@ -168,7 +168,7 @@ g''-r^2g=-\frac{2r}{\Lambda}e^{-u}g,
 \qquad g'(0)=0.
 ```
 
-Setting x=sqrt(8r/Lambda)e^{-u/2} gives Bessel's equation of order nu=2r. Decay at u=infinity selects J_nu. The Neumann condition gives J_nu'(x_0)=0, and the leading eigenvalue is
+Setting $x=\sqrt{8r/\Lambda}e^{-u/2}$ gives Bessel's equation of order $\nu=2r$. Decay at $u=\infty$ selects $J_\nu$. The Neumann condition gives $J_\nu'(x_0)=0$, and the leading eigenvalue is
 
 ```math
 \Lambda(r)=\frac{8r}{[j'_{2r,1}]^2}.
@@ -182,7 +182,7 @@ f_Q(u)=
 {\sqrt{J_{2r}(x_0)^2-J_{2r-1}(x_0)J_{2r+1}(x_0)}}.
 ```
 
-At r=0, L_0=2|h_0><h_0|, f_Q=e^{-u/2}, and Lambda=2. The first derivative zero for positive order tends to zero as $r$ approaches zero; substituting the first strictly positive zero of $J_0'$ would give the wrong limit.
+At $r=0$, $L_0=2|h_0\rangle\langle h_0|$, $f_Q=e^{-u/2}$, and $\Lambda=2$. The first derivative zero for positive order tends to zero as $r$ approaches zero; substituting the first strictly positive zero of $J_0'$ would give the wrong limit.
 
 The Bessel recurrence at the derivative root yields useful scalar metrics:
 
@@ -191,11 +191,11 @@ m_Q^2=\frac{\beta\Lambda^2}{4-2r\Lambda},
 \qquad p_Q=\beta\Lambda-m_Q^2.
 ```
 
-This pulse maximizes the *margin* p+m²-1 and determines whether any encoding succeeds. It is not claimed to maximize Q itself. In particular, it differs from the average-fidelity-optimal pulse of the pulse-objective analysis.
+This pulse maximizes the *margin* $p+m^2-1$ and determines whether any encoding succeeds. It is not claimed to maximize $Q$ itself. In particular, it differs from the average-fidelity-optimal pulse of the pulse-objective analysis.
 
-The largest eigenvalue decreases strictly with r. Although pointwise monotonicity of kernels does not in general imply operator order, here it suffices: the positive maximizing eigenfunction at the larger r has strictly larger Rayleigh quotient in the smaller-r kernel. Also Lambda tends to zero at strong dephasing; a Schur bound on K_r plus ||h_r||² gives this limit. Consequently every beta>1/2 has a unique threshold; beta<=1/2 has no positive-capacity region even in the noise-free limit.
+The largest eigenvalue decreases strictly with $r$. Although pointwise monotonicity of kernels does not in general imply operator order, here it suffices: the positive maximizing eigenfunction at the larger $r$ has strictly larger Rayleigh quotient in the smaller-$r$ kernel. Also $\Lambda$ tends to zero at strong dephasing; a Schur bound on $K_r$ plus $\|h_r\|^2$ gives this limit. Consequently every $\beta>1/2$ has a unique threshold; $\beta\le1/2$ has no positive-capacity region even in the noise-free limit.
 
-| Incident fraction beta | Largest r allowing positive capacity (strictly below the endpoint) |
+| Incident fraction $\beta$ | Largest $r$ allowing positive capacity (strictly below the endpoint) |
 |---:|---:|
 | 0.50 | None |
 | 0.55 | 0.06761278 |
@@ -208,12 +208,12 @@ These are parameter thresholds of the stated model, not experimentally validated
 
 ## A pulse can absorb less yet change zero capacity to positive capacity
 
-At r=0.72 and beta=1:
+At $r=0.72$ and $\beta=1$:
 
-| Temporal pulse | Population p | Coherence m | p+m² | Unassisted Q |
+| Temporal pulse | Population $p$ | Coherence $m$ | $p+m^2$ | Unassisted $Q$ |
 |---|---:|---:|---:|---|
 | Population optimum | 0.61668899 | 0.61668899 | 0.99699430 | Exactly zero |
-| Ordinary exponential f(u)=sqrt(2)e^-u | 0.60060060 | 0.63703314 | 1.00641182 | Strictly positive |
+| Ordinary exponential $f(u)=\sqrt2e^{-u}$ | 0.60060060 | 0.63703314 | 1.00641182 | Strictly positive |
 | Exact boundary-margin optimum | 0.60926569 | 0.63317689 | 1.01017866 | Strictly positive |
 
 For the elementary exponential, the criterion is exact rational arithmetic:
@@ -225,35 +225,35 @@ p+m^2-1=\frac{79}{12321}>0.
 
 The population-optimal pulse is certified globally by the [population kernel spectrum](pulse-objectives.md), not just within exponentials. Reducing its population by changing the temporal mode can make coherent communication possible. The numerical separation is robust at the level of the sign criterion; no delicate cancellation in an entropy calculation is needed to establish it.
 
-At beta=1, the thresholds are:
+At $\beta=1$, the thresholds are:
 
-| Pulse selection rule | Positive-capacity threshold r |
+| Pulse selection rule | Positive-capacity threshold $r$ |
 |---|---:|
 | Maximize population | 0.7154844683 |
 | Best boundary objective among rising exponentials | 0.7313754032 |
 | Maximize average fidelity over all shapes | 0.7344094125 |
 | Maximize the exact capacity-boundary margin | 0.7358007967 |
 
-For an exponential f_a=sqrt(a)e^{-au/2}, the objective is
+For an exponential $f_a=\sqrt a\,e^{-au/2}$, the objective is
 
 ```math
 p+m^2=\frac{4\beta a(2a+c+1)}{(a+1)(a+c)^2},\qquad c=1+2r.
 ```
 
-Its stationary polynomial is 2a³+2a²+(1-3c)a-c²-c=0. For c>=1 there is exactly one positive root, and the objective vanishes at both endpoints. This proves the exponential-family global optimum. The extension from that family to the exact boundary is only about 0.6% in $r$. The channel-ordering theorem, rather than a large advantage from complicated pulse shapes, is the central result.
+Its stationary polynomial is $2a^3+2a^2+(1-3c)a-c^2-c=0$. For $c\ge1$ there is exactly one positive root, and the objective vanishes at both endpoints. This proves the exponential-family global optimum. The extension from that family to the exact boundary is only about 0.6% in $r$. The channel-ordering theorem, rather than a large advantage from complicated pulse shapes, is the central result.
 
 ## Achievable rates near the boundary
 
 The small-input proof certifies positive rates close to the boundary. The full entropy formulas below are checked at both 90 and 140 decimal digits.
 
-For the elementary r=0.72 exponential and rho_q=diag(1-q,q), q=10^-26 gives
+For the elementary $r=0.72$ exponential and $\rho_q=\operatorname{diag}(1-q,q)$, $q=10^{-26}$ gives
 
 ```math
 I_c=1.6246241910\ldots\times10^{-28}
 \quad\text{qubits per independent use}.
 ```
 
-For the exact boundary-margin pulse at the same r, the explicit choice
+For the exact boundary-margin pulse at the same $r$, the explicit choice
 
 ```math
 q=1.8633516299\ldots\times10^{-17}
@@ -270,10 +270,10 @@ These are achievable lower bounds for the specified inputs. A standard double-pr
 
 There is also an independent [upper bound on the full capacity](capacity-upper-bound.md). With $\delta=\beta\Lambda_r(S)-1>0$, it gives $Q=O(\delta\log(1/\delta))$ as the boundary is approached. Thus all codes have vanishing rate there, although the upper bound and these achievable witnesses do not determine the exact rate or its scaling.
 
-The $r=3$ [fidelity example](pulse-objectives.md) illustrates another distinction. Its fidelity-optimal pulse has average fidelity 0.670674>2/3, but the full receiver has
+The $r=3$ [fidelity example](pulse-objectives.md) illustrates another distinction. Its fidelity-optimal pulse has average fidelity $0.670674>2/3$, but the full receiver has
 
 ```math
 \Lambda(3)=0.4265226440\ldots<1.
 ```
 
-Thus every allowed temporal encoding has zero unassisted capacity there, despite the fidelity benchmark being exceeded. This is not a contradiction: single-shot uniform-qubit fidelity and asymptotic unassisted communication are different tasks. Nor does zero capacity here imply an entanglement-breaking channel. The single-rail Choi state remains non-positive under partial transpose when m is nonzero; assisted entanglement protocols are a different resource setting.
+Thus every allowed temporal encoding has zero unassisted capacity there, despite the fidelity benchmark being exceeded. This is not a contradiction: single-shot uniform-qubit fidelity and asymptotic unassisted communication are different tasks. Nor does zero capacity here imply an entanglement-breaking channel. The single-rail Choi state remains non-positive under partial transpose when $m$ is nonzero; assisted entanglement protocols are a different resource setting.

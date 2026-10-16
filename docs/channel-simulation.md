@@ -35,7 +35,7 @@ The monotone change-of-variable formula makes the following map an isometry from
 \int_0^U|(Vf)(u)|^2du=\int_A|f(x)|^2dx.
 ```
 
-The denominator is positive almost everywhere in u; endpoint conventions and null sets do not affect the map. Extend V by zero on $(U,S]$. Write $P_A,P_Z$ for the photon-sector projections, extended by zero on vacuum, and set
+The denominator is positive almost everywhere in $u$; endpoint conventions and null sets do not affect the map. Extend $V$ by zero on $(U,S]$. Write $P_A,P_Z$ for the photon-sector projections, extended by zero on vacuum, and set
 
 ```math
 J=|\mathrm{vac}_{\rm out}\rangle\langle\mathrm{vac}_{\rm in}|+VP_A,
@@ -68,7 +68,7 @@ v-u=R(x(v))-R(x(u))
 \le\Gamma_M[x(v)-x(u)].
 ```
 
-Also $u=R(x(u))\le\Gamma_M x(u)$. Hence $0\le d(u)\le T$, d is nondecreasing, and
+Also $u=R(x(u))\le\Gamma_M x(u)$. Hence $0\le d(u)\le T$, $d$ is nondecreasing, and
 
 ```math
 |x(u)-x(v)|=\frac{|u-v|}{\Gamma_M}+|d(u)-d(v)|.
@@ -76,9 +76,9 @@ Also $u=R(x(u))\le\Gamma_M x(u)$. Hence $0\le d(u)\le T$, d is nondecreasing, an
 
 This additive identity is why the residual dephasing is an actual channel rather than merely a positive numerical penalty in one objective.
 
-The formulas for c and d apply on $(0,U)$. On the unused interval $(U,S]$, take $c=0$ and $d=d(U^-)$; the reshaped state has no photon weight there.
+The formulas for $c$ and $d$ apply on $(0,U)$. On the unused interval $(U,S]$, take $c=0$ and $d=d(U^-)$; the reshaped state has no photon weight there.
 
-The factor c is attenuation of the photon amplitude. Its trace-preserving channel on vacuum plus one photon is
+The factor $c$ is attenuation of the photon amplitude. Its trace-preserving channel on vacuum plus one photon is
 
 ```math
 \rho_{11}\mapsto C\rho_{11}C,\qquad
@@ -86,7 +86,7 @@ The factor c is attenuation of the photon amplitude. Its trace-preserving channe
 \rho_{00}\mapsto\rho_{00}+\operatorname{Tr}[(I-C^2)\rho_{11}],
 ```
 
-where C multiplies wavefunctions by c(u). This is ordinary loss into an unobserved ancillary port, not postselection. If $\kappa=0$, c=1 on the retained support: the only photon loss introduced by the simulator is then the prior removal of completely uncoupled components.
+where $C$ multiplies wavefunctions by $c(u)$. This is ordinary loss into an unobserved ancillary port, not postselection. If $\kappa=0$, $c=1$ on the retained support: the only photon loss introduced by the simulator is then the prior removal of completely uncoupled components.
 
 ### Extra waiting is a valid phase-noise channel, including vacuum coherence
 
@@ -97,7 +97,7 @@ V_B|\mathrm{vac}\rangle=|\mathrm{vac}\rangle,\qquad
 (V_B\psi)(u)=e^{i\sqrt{2\gamma_\phi}B_{d(u)}}\psi(u).
 ```
 
-Each $V_B$ is unitary on vacuum plus the one-photon space. Since d is measurable and bounded by T, the Wiener-path average exists in trace norm for every trace-class input. It gives a CPTP map with normal adjoint. Its matrix elements satisfy
+Each $V_B$ is unitary on vacuum plus the one-photon space. Since $d$ is measurable and bounded by $T$, the Wiener-path average exists in trace norm for every trace-class input. It gives a CPTP map with normal adjoint. Its matrix elements satisfy
 
 ```math
 \rho_{11}(u,v)\mapsto e^{-\gamma_\phi|d(u)-d(v)|}\rho_{11}(u,v),
@@ -107,7 +107,7 @@ Each $V_B$ is unitary on vacuum plus the one-photon space. Since d is measurable
 \rho_{01}(u)\mapsto e^{-\gamma_\phi d(u)}\rho_{01}(u).
 ```
 
-The second line is essential. Preserving photon-sector populations alone would not simulate the single-rail quantum channel. The covariance with the vacuum is fixed by taking its phase label to be d=0.
+The second line is essential. Preserving photon-sector populations alone would not simulate the single-rail quantum channel. The covariance with the vacuum is fixed by taking its phase label to be $d=0$.
 
 This random-unitary representation is a mathematical implementation of the required dephasing channel; it does not assert that a particular laboratory bath is classical or reveal a noise record to the decoder. Attenuation remains a separate process and is not reclassified as classical phase noise.
 
@@ -168,7 +168,7 @@ No numerical optimization is needed to identify the comparison channel.
 
 The information-theoretic inference is standard channel simulation/data processing [J21](references.md#j21). It must be distinguished from the receiver-specific construction above.
 
-Suppose an encoder $\mathcal A_n$, n controlled receiver uses, and decoder $\mathcal D_n$ achieve a specified entanglement fidelity. Replace each controlled use by maximum coupling and incorporate $\mathcal P_g^{\otimes n}$ into the encoder. The final reference–decoder state is unchanged, exactly. If different deterministic schedules are used in different slots, use the corresponding product of preprocessors.
+Suppose an encoder $\mathcal A_n$, $n$ controlled receiver uses, and decoder $\mathcal D_n$ achieve a specified entanglement fidelity. Replace each controlled use by maximum coupling and incorporate $\mathcal P_g^{\otimes n}$ into the encoder. The final reference–decoder state is unchanged, exactly. If different deterministic schedules are used in different slots, use the corresponding product of preprocessors.
 
 The preprocessing does not increase the input photon number or support outside the available window, so it respects both the at-most-one-photon-per-use restriction and an additional upper bound on mean photon number. The encoder may discard systems, so the fact that preprocessing can convert a pure pulse to a mixed temporal state is allowed. No classical side information about the added phases is delivered to the receiver.
 
