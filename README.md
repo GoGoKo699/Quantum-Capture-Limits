@@ -15,7 +15,7 @@ Does varying a receiver's coupling improve quantum communication when the source
 
 ## What is being compared
 
-A two-level receiver begins in its ground state. Its incident-port population-decay rate obeys $0\le g(t)\le g_{\max}$. Inaccessible radiative loss $\kappa$ and extra coherence decay $\gamma_\phi$ remain fixed under control. The output is the receiver at the capture instant.
+A two-level receiver begins in its ground state. Its incident-port population-decay rate obeys $`0\le g(t)\le g_{\max}`$. Inaccessible radiative loss $`\kappa`$ and extra coherence decay $`\gamma_\phi`$ remain fixed under control. The output is the receiver at the capture instant.
 
 Inputs contain **vacuum and at most one photon per independently reset use**, with a shared phase reference. Temporal encoders may prepare mixed states and entangle different uses. Source bandwidth and conversion cost are uncharged. The controlled Markov dynamics, available receiving levels and inaccessible output fields are specified in the [model](docs/model.md).
 
@@ -29,7 +29,7 @@ For every allowed known schedule and detuning, the [construction](docs/channel-s
 \boxed{\mathcal E_{g,\Delta}=\mathcal E_{\max}\circ\mathcal P_{g,\Delta}.}
 ```
 
-The preprocessor $\mathcal P_{g,\Delta}$ is completely positive and trace preserving. It never increases photon number or enlarges the input window, and it does not postselect. Composing it with any encoder reproduces the same receiver–reference state. Consequently,
+The preprocessor $`\mathcal P_{g,\Delta}`$ is completely positive and trace preserving. It never increases photon number or enlarges the input window, and it does not postselect. Composing it with any encoder reproduces the same receiver–reference state. Consequently,
 
 ```math
 \sup_{g,\Delta}Q(\mathcal E_{g,\Delta})=Q(\mathcal E_{\max}).
@@ -45,15 +45,15 @@ The result is one valid input channel for all states. It generally mixes a pure 
 
 ## The communication boundary
 
-Write $\Gamma_M=g_{\max}+\kappa$, $\beta=g_{\max}/\Gamma_M$, $r=\gamma_\phi/\Gamma_M$ and $S=\Gamma_MT$. Let $\Lambda_r(S)$ be the leading eigenvalue of the explicitly defined [population-plus-coherence kernel](docs/capacity-boundary.md).
+Write $`\Gamma_M=g_{\max}+\kappa`$, $`\beta=g_{\max}/\Gamma_M`$, $`r=\gamma_\phi/\Gamma_M`$ and $`S=\Gamma_MT`$. Let $`\Lambda_r(S)`$ be the leading eigenvalue of the explicitly defined [population-plus-coherence kernel](docs/capacity-boundary.md).
 
 | Condition | Consequence for the allowed receiver family |
 |---|---|
-| $\beta\Lambda_r(S)\le1$ | Every allowed schedule has zero unassisted quantum capacity. Equality belongs to this region. |
-| $\beta\Lambda_r(S)>1$ | Maximum coupling has positive capacity, witnessed by a vacuum–photon encoding. |
-| $\beta=1$, arbitrarily long window | Positive capacity requires $r<0.7358007967\ldots$. |
+| $`\beta\Lambda_r(S)\le1`$ | Every allowed schedule has zero unassisted quantum capacity. Equality belongs to this region. |
+| $`\beta\Lambda_r(S)>1`$ | Maximum coupling has positive capacity, witnessed by a vacuum–photon encoding. |
+| $`\beta=1`$, arbitrarily long window | Positive capacity requires $`r<0.7358007967\ldots`$. |
 
-At $\beta=1$, $r=1/2$ and $S=4$, a finite rising exponential certifies **0.02957015519 qubits per use** as an achievable lower bound. The separate [all-code upper bound](docs/capacity-upper-bound.md) tends to zero at the boundary. These bounds describe different sides of the rate question.
+At $`\beta=1`$, $`r=1/2`$ and $`S=4`$, a finite rising exponential certifies **0.02957015519 qubits per use** as an achievable lower bound. The separate [all-code upper bound](docs/capacity-upper-bound.md) tends to zero at the boundary. These bounds describe different sides of the rate question.
 
 The effective-time method, source/control interchange, several absorption optima and the fixed-mode damping–dephasing criterion have established precedents. The receiver-specific contribution is the explicit noisy channel simulation and its consequences under the stated resources. The [attribution comparison](docs/prior-work.md) and [references](docs/references.md) identify the inherited ingredients precisely.
 

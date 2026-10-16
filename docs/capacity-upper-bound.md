@@ -2,14 +2,14 @@
 
 The [exact sign criterion](capacity-boundary.md) also yields a quantitative upper bound on the full, regularized unassisted capacity. It applies to every temporal encoding and every block length under the [model's resources](model.md). It complements the coherent-information lower bounds without asserting their optimality.
 
-For a vacuum-preserving capture map with photon-sector effect $A$ and vacuum-coherence vector $b$, set
+For a vacuum-preserving capture map with photon-sector effect $`A`$ and vacuum-coherence vector $`b`$, set
 
 ```math
 \mu=\|A+|b\rangle\langle b|\|,\qquad
 \epsilon=\begin{cases}0,&\mu\le1,\\1-\mu^{-1},&\mu>1.\end{cases}
 ```
 
-Write $g_2(x)=(1+x)\log_2(1+x)-x\log_2x$, with $g_2(0)=0$. Then
+Write $`g_2(x)=(1+x)\log_2(1+x)-x\log_2x`$, with $`g_2(0)=0`$. Then
 
 ```math
 \boxed{Q(\mathcal E)\le U(\mu)
@@ -17,18 +17,18 @@ Write $g_2(x)=(1+x)\log_2(1+x)-x\log_2x$, with $g_2(0)=0$. Then
 \quad\text{qubits per independent use}.}
 ```
 
-At maximum coupling, $\mu=\beta\Lambda_r(S)$; the infinite-window value is $\beta\Lambda_r(\infty)$. By [channel simulation](channel-simulation.md), the same maximum-coupling upper bound applies to every allowed receiver schedule. The entropy-continuity ingredient is established: [SH17, Proposition 3A and Proposition 11, Eq. (87)](references.md#sh17) refines the channel-capacity method of [LS09](references.md#ls09). The receiver-specific step below constructs the nearby antidegradable channel directly from $\mu$.
+At maximum coupling, $`\mu=\beta\Lambda_r(S)`$; the infinite-window value is $`\beta\Lambda_r(\infty)`$. By [channel simulation](channel-simulation.md), the same maximum-coupling upper bound applies to every allowed receiver schedule. The entropy-continuity ingredient is established: [SH17, Proposition 3A and Proposition 11, Eq. (87)](references.md#sh17) refines the channel-capacity method of [LS09](references.md#ls09). The receiver-specific step below constructs the nearby antidegradable channel directly from $`\mu`$.
 
 ## An explicit antidegradable comparison channel
 
-If $\mu\le1$, the original map already has the broadcast extension in [Capacity boundary](capacity-boundary.md). Suppose $\mu>1$, and let $\mathcal D_\tau$ be qubit amplitude damping with excitation survival $\tau=\mu^{-1}$. Its Kraus operators are
+If $`\mu\le1`$, the original map already has the broadcast extension in [Capacity boundary](capacity-boundary.md). Suppose $`\mu>1`$, and let $`\mathcal D_\tau`$ be qubit amplitude damping with excitation survival $`\tau=\mu^{-1}`$. Its Kraus operators are
 
 ```math
 D_0=|0\rangle\langle0|+\sqrt\tau|1\rangle\langle1|,
 \qquad D_1=\sqrt{1-\tau}|0\rangle\langle1|.
 ```
 
-The comparison channel $\mathcal F=\mathcal D_\tau\circ\mathcal E$ has
+The comparison channel $`\mathcal F=\mathcal D_\tau\circ\mathcal E`$ has
 
 ```math
 A_{\mathcal F}=\tau A,\qquad b_{\mathcal F}=\sqrt\tau\,b,
@@ -36,7 +36,7 @@ A_{\mathcal F}=\tau A,\qquad b_{\mathcal F}=\sqrt\tau\,b,
 =\tau(A+|b\rangle\langle b|)\preceq I.
 ```
 
-Thus $\mathcal F$ is antidegradable. This auxiliary output attenuation is used to bound the original channel's capacity. It is separate from the input preprocessing that compares different receiver schedules.
+Thus $`\mathcal F`$ is antidegradable. This auxiliary output attenuation is used to bound the original channel's capacity. It is separate from the input preprocessing that compares different receiver schedules.
 
 ## Distance bound, including arbitrary references
 
@@ -53,21 +53,21 @@ Here is a direct proof. By convexity it suffices to use a pure qubit–reference
 +\sqrt q|1\rangle|b\rangle,
 ```
 
-where $a,b$ are unit vectors, need not be orthogonal, and $0\le q\le1$. Let $v=(D_0\otimes I)\psi$, $w=(D_1\otimes I)\psi$, $\epsilon=1-\tau$, and $c=1-\sqrt\tau$. The trace norm of the difference between the two rank-one operators $|\psi\rangle\langle\psi|$ and $|v\rangle\langle v|$, followed by the triangle inequality for $|w\rangle\langle w|$, gives
+where $`a,b`$ are unit vectors, need not be orthogonal, and $`0\le q\le1`$. Let $`v=(D_0\otimes I)\psi`$, $`w=(D_1\otimes I)\psi`$, $`\epsilon=1-\tau`$, and $`c=1-\sqrt\tau`$. The trace norm of the difference between the two rank-one operators $`|\psi\rangle\langle\psi|`$ and $`|v\rangle\langle v|`$, followed by the triangle inequality for $`|w\rangle\langle w|`$, gives
 
 ```math
 \big\||\psi\rangle\langle\psi|-(\mathcal D_\tau\otimes\mathrm{id})(|\psi\rangle\langle\psi|)\big\|_1
 \le\epsilon q+\sqrt{\epsilon^2q^2+4c^2q(1-q)}\le2\epsilon.
 ```
 
-The last inequality follows from $c\le\epsilon$ and
+The last inequality follows from $`c\le\epsilon`$ and
 
 ```math
 \epsilon^2(2-q)^2-[\epsilon^2q^2+4c^2q(1-q)]
 =4(1-q)(\epsilon^2-c^2q)\ge0.
 ```
 
-An excited-state input attains $2\epsilon$. Contractivity under composition therefore gives
+An excited-state input attains $`2\epsilon`$. Contractivity under composition therefore gives
 
 ```math
 \frac12\|\mathcal E-\mathcal F\|_\diamond
@@ -79,7 +79,7 @@ This bound has no temporal-input dimension factor.
 
 ## From channel distance to arbitrary quantum codes
 
-Use the finite-output mutual-information estimate [SH17, Proposition 3A](references.md#sh17). For any state on a finite reference $R$ and $n$ temporal inputs, the two output states obey
+Use the finite-output mutual-information estimate [SH17, Proposition 3A](references.md#sh17). For any state on a finite reference $`R`$ and $`n`$ temporal inputs, the two output states obey
 
 ```math
 |I(R:B^n)_{\mathcal E^{\otimes n}}
@@ -89,7 +89,7 @@ Use the finite-output mutual-information estimate [SH17, Proposition 3A](referen
 
 The proof replaces one channel use at a time; the other-output marginal stays fixed. Its constant depends only on the finite output dimension, so it covers the separable infinite-dimensional temporal input space.
 
-Both channels leave $\rho_R$ unchanged, so the same difference bound holds for $I_c(R\rangle B^n)=I(R:B^n)-H(R)$. The broadcast extension of $\mathcal F^{\otimes n}$ and weak monotonicity of conditional entropy give
+Both channels leave $`\rho_R`$ unchanged, so the same difference bound holds for $`I_c(R\rangle B^n)=I(R:B^n)-H(R)`$. The broadcast extension of $`\mathcal F^{\otimes n}`$ and weak monotonicity of conditional entropy give
 
 ```math
 I_c(R\rangle B^n)_{\mathcal F^{\otimes n}}\le0,
@@ -98,7 +98,7 @@ I_c(R\rangle B^n)_{\mathcal E^{\otimes n}}
 \le n[2\epsilon+g_2(\epsilon)].
 ```
 
-This also gives an operational converse for general encoders, including encoders that discard an ancillary system. If a code transmits half of a maximally entangled state of dimension $K_n$, with decoded trace distance $\eta_n=\tfrac12\|\rho_{R\widehat R}-\Phi_{K_n}\|_1$ from the target, data processing and conditional-entropy continuity imply
+This also gives an operational converse for general encoders, including encoders that discard an ancillary system. If a code transmits half of a maximally entangled state of dimension $`K_n`$, with decoded trace distance $`\eta_n=\tfrac12\|\rho_{R\widehat R}-\Phi_{K_n}\|_1`$ from the target, data processing and conditional-entropy continuity imply
 
 ```math
 (1-2\eta_n)\log_2K_n-g_2(\eta_n)
@@ -106,11 +106,11 @@ This also gives an operational converse for general encoders, including encoders
 \le n[2\epsilon+g_2(\epsilon)].
 ```
 
-For vanishing decoding error, divide by $n$ and take the limit. The output-dimension bound supplies $Q\le1$. This proof uses finite reference and output systems for each code, without assuming an infinite-input regularized capacity formula.
+For vanishing decoding error, divide by $`n`$ and take the limit. The output-dimension bound supplies $`Q\le1`$. This proof uses finite reference and output systems for each code, without assuming an infinite-input regularized capacity formula.
 
 ## What the upper bound adds near the threshold
 
-With positive spectral margin $\delta=\mu-1$, one has $\epsilon=\delta/(1+\delta)$ and
+With positive spectral margin $`\delta=\mu-1`$, one has $`\epsilon=\delta/(1+\delta)`$ and
 
 ```math
 U(1+\delta)=\delta\log_2(1/\delta)+O(\delta),
@@ -119,9 +119,9 @@ U(1+\delta)=\delta\log_2(1/\delta)+O(\delta),
 
 Thus the full capacity tends to zero as the sign boundary is approached from the positive side, even after optimizing temporal encoding and allowing entangled multi-use codes. A tiny coherent-information witness alone would not establish this upper limit.
 
-At $\beta=1$ with an unlimited input window, evaluations of this upper bound are:
+At $`\beta=1`$ with an unlimited input window, evaluations of this upper bound are:
 
-| Extra-dephasing ratio $r$ | Capacity upper bound $U(\Lambda_r)$, qubits/use |
+| Extra-dephasing ratio $`r`$ | Capacity upper bound $`U(\Lambda_r)`$, qubits/use |
 |---:|---:|
 | 0.72 | 0.1015959055 |
 | 0.73 | 0.0426072045 |

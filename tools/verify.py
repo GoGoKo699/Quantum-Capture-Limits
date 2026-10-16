@@ -25,6 +25,26 @@ def source_hashes():
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 
 
+def check_math_markup(text, path):
+    """Catch the renderer failures from unprotected inline math and operator names."""
+    fence = None
+    for number, line in enumerate(text.splitlines(), 1):
+        if line.lstrip().startswith("```"):
+            fence = line.strip()[3:].strip() if fence is None else None
+            continue
+        if fence is not None:
+            math = line if fence == "math" else ""
+        else:
+            spans = re.findall(r"\$`([^`\n]*)`\$", line)
+            math = " ".join(spans)
+            prose = re.sub(r"\$`[^`\n]*`\$", "", line)
+            prose = re.sub(r"(`+).*?\1", "", prose)
+            if re.search(r"(?<!\\)\$", prose):
+                raise ValueError(f"Use dollar-backtick inline math in {path}:{number}")
+        if re.search(r"\\operatorname\b", math):
+            raise ValueError(f"Use renderer-compatible named operators in {path}:{number}")
+
+
 def structural_checks():
     parsed = 0
     for path in source_hashes():
@@ -35,6 +55,7 @@ def structural_checks():
         if any(part.startswith(".") or part in ("artifacts", "venv") for part in f.relative_to(ROOT).parts):
             continue
         text = f.read_text(encoding="utf-8")
+        check_math_markup(text, f)
         if text.count("```") % 2:
             raise ValueError(f"Unbalanced Markdown fences: {f}")
         if re.search(r"\\[\[\]()]", text):

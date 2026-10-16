@@ -22,7 +22,7 @@ Introduce mathematical objects and rate conventions before using them, explain w
 
 Run `python tools/verify.py` from the repository root after any scientific or computational edit. Assertions must remain enabled. Generated raw reports belong in artifacts/; they are not proofs. Update verification/validated.json only from an actual successful run using `python tools/verify.py --record`. Never hand-edit a PASS or claim that GitHub Actions succeeded without checking the workflow result.
 
-Use `$...$` for inline mathematics and fenced `math` blocks for display equations. Keep relative links valid. Source code is deduplicated in capture/; independent checks are in tests/. Retain independent numerical formulations instead of making a test call only the formula it purportedly verifies. Preserve LICENSE.
+Use dollar–backtick delimiters (``$`...`$``) for inline mathematics and fenced `math` blocks for display equations. The backticks protect subscripts, braces and other mathematical characters from Markdown parsing. Use `\mathrm{...}` for named operators; the repository's renderer rejects the operator-name macro. Keep relative links valid. Source code is deduplicated in capture/; independent checks are in tests/. Retain independent numerical formulations instead of making a test call only the formula it purportedly verifies. Preserve LICENSE.
 
 ## Discovery and citation
 

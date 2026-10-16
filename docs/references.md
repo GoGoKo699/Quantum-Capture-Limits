@@ -90,12 +90,12 @@ P. Kurpiers et al., *Deterministic quantum state transfer and remote entanglemen
 <a id="l22"></a>
 ## L22
 
-W.-J. Lin et al., *Deterministic Loading of Microwaves onto an Artificial Atom Using a Time-Reversed Waveform*, Nano Letters **22**, 8137–8142 (2022). DOI [10.1021/acs.nanolett.2c02578](https://doi.org/10.1021/acs.nanolett.2c02578). [Published paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9615994/); [final supplementary information](https://nori-physics.org/wp-content/uploads/NanoLett_22_pp8137_6_Oct_2022_SM.pdf). Supplement Sec. S8, Eq. (S22) and the following optimum give exactly the population efficiency and optimal duration of the lossless exponential family used here, with $a=2/(\Gamma\tau)$ and $r=\Gamma_{\phi,n}/\Gamma$ when nonradiative loss is negligible. Sec. S2 distinguishes $\Gamma_{\phi,n}=\Gamma_\phi+\Gamma_n/2$ from pure dephasing alone. Experimental coherent-pulse loading and calculated Fock-state loading are different observables; neither is an arbitrary-input quantum-capacity measurement. The preprint title differs from the published title.
+W.-J. Lin et al., *Deterministic Loading of Microwaves onto an Artificial Atom Using a Time-Reversed Waveform*, Nano Letters **22**, 8137–8142 (2022). DOI [10.1021/acs.nanolett.2c02578](https://doi.org/10.1021/acs.nanolett.2c02578). [Published paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC9615994/); [final supplementary information](https://nori-physics.org/wp-content/uploads/NanoLett_22_pp8137_6_Oct_2022_SM.pdf). Supplement Sec. S8, Eq. (S22) and the following optimum give exactly the population efficiency and optimal duration of the lossless exponential family used here, with $`a=2/(\Gamma\tau)`$ and $`r=\Gamma_{\phi,n}/\Gamma`$ when nonradiative loss is negligible. Sec. S2 distinguishes $`\Gamma_{\phi,n}=\Gamma_\phi+\Gamma_n/2`$ from pure dephasing alone. Experimental coherent-pulse loading and calculated Fock-state loading are different observables; neither is an arbitrary-input quantum-capacity measurement. The preprint title differs from the published title.
 
 <a id="lc23"></a>
 ## LC23
 
-D. Lonigro, D. Chruściński, *Excitation-damping quantum channels*, Journal of Physics A: Mathematical and Theoretical **56**, 255301 (2023). DOI [10.1088/1751-8121/acd734](https://doi.org/10.1088/1751-8121/acd734). [arXiv:2206.04623v1](https://arxiv.org/html/2206.04623v1). Section 2.1, Eqs. (2)–(5), and Theorem 2.1 give a general excitation/ground block structure and complete-positivity criterion. Applied to finite temporal truncations with a one-dimensional excited output, this reduces to $0\preceq|b\rangle\langle b|\preceq A\preceq I$.
+D. Lonigro, D. Chruściński, *Excitation-damping quantum channels*, Journal of Physics A: Mathematical and Theoretical **56**, 255301 (2023). DOI [10.1088/1751-8121/acd734](https://doi.org/10.1088/1751-8121/acd734). [arXiv:2206.04623v1](https://arxiv.org/html/2206.04623v1). Section 2.1, Eqs. (2)–(5), and Theorem 2.1 give a general excitation/ground block structure and complete-positivity criterion. Applied to finite temporal truncations with a one-dimensional excited output, this reduces to $`0\preceq|b\rangle\langle b|\preceq A\preceq I`$.
 
 <a id="ls09"></a>
 ## LS09
@@ -115,7 +115,7 @@ S. Massar and S. Popescu, *Optimal Extraction of Information from Finite Quantum
 <a id="msg24"></a>
 ## MSG24
 
-F. A. Mele, F. Salek, V. Giovannetti, L. Lami, *Quantum communication on the bosonic loss-dephasing channel*, Physical Review A **110**, 012460 (2024). DOI [10.1103/PhysRevA.110.012460](https://doi.org/10.1103/PhysRevA.110.012460). [arXiv:2401.15634v3](https://arxiv.org/html/2401.15634v3). Theorem 2 and Appendix B.2.2, Theorem 38, Proof 3, establish the antidegradability boundary for its qubit restriction. With $\lambda=p$ and $e^{-\gamma}=|m|^2/p$, the criterion is $p+|m|^2\le1$. Equation (62) displays its Choi state. This is the direct antecedent credited by [SAJS24](#sajs24); the full bosonic channel has different input resources and must be distinguished from the qubit restriction.
+F. A. Mele, F. Salek, V. Giovannetti, L. Lami, *Quantum communication on the bosonic loss-dephasing channel*, Physical Review A **110**, 012460 (2024). DOI [10.1103/PhysRevA.110.012460](https://doi.org/10.1103/PhysRevA.110.012460). [arXiv:2401.15634v3](https://arxiv.org/html/2401.15634v3). Theorem 2 and Appendix B.2.2, Theorem 38, Proof 3, establish the antidegradability boundary for its qubit restriction. With $`\lambda=p`$ and $`e^{-\gamma}=|m|^2/p`$, the criterion is $`p+|m|^2\le1`$. Equation (62) displays its Choi state. This is the direct antecedent credited by [SAJS24](#sajs24); the full bosonic channel has different input resources and must be distinguished from the qubit restriction.
 
 <a id="n02"></a>
 ## N02
@@ -140,12 +140,12 @@ V. Siddhu, *Entropic singularities give rise to quantum transmission*, Nature Co
 <a id="sajs24"></a>
 ## SAJS24
 
-V. Siddhu, D. Abdelhadi, T. Jochym-O'Connor, J. Smolin, *Entanglement sharing across a damping-dephasing channel*, [arXiv:2405.06231v2](https://arxiv.org/html/2405.06231v2), July 28, 2025 (initial preprint 2024). Section 4.1, Lemma 1, Eqs. (24)–(25), proves positive coherent information outside $p+|m|^2\le1$ by an entropy-singularity argument; the same section credits [MSG24](#msg24) for the exact antidegradability criterion and constructs an explicit antidegrading map. Section 4.2 supplies nonadditivity context. No new fixed-mode capacity-sign classification is asserted here.
+V. Siddhu, D. Abdelhadi, T. Jochym-O'Connor, J. Smolin, *Entanglement sharing across a damping-dephasing channel*, [arXiv:2405.06231v2](https://arxiv.org/html/2405.06231v2), July 28, 2025 (initial preprint 2024). Section 4.1, Lemma 1, Eqs. (24)–(25), proves positive coherent information outside $`p+|m|^2\le1`$ by an entropy-singularity argument; the same section credits [MSG24](#msg24) for the exact antidegradability criterion and constructs an explicit antidegrading map. Section 4.2 supplies nonadditivity context. No new fixed-mode capacity-sign classification is asserted here.
 
 <a id="sh17"></a>
 ## SH17
 
-M. E. Shirokov, *Tight uniform continuity bounds for the quantum conditional mutual information, for the Holevo quantity, and for capacities of quantum channels*, Journal of Mathematical Physics **58**, 102202 (2017). DOI 10.1063/1.4987135. https://arxiv.org/abs/1512.09047v7 . Proposition 3A, Eq. (45), bounds output mutual-information variation by $n[2\epsilon\log d_B+g_2(\epsilon)]$, with $\epsilon$ the half diamond distance; Proposition 11, Eq. (87), gives the capacity statement. The [receiver upper bound](capacity-upper-bound.md) applies Proposition 3A directly to finite-reference codes, so it does not require the infinite-input capacity-formula assumption stated in that preprint's footnote 10. Numbering here refers to arXiv v7.
+M. E. Shirokov, *Tight uniform continuity bounds for the quantum conditional mutual information, for the Holevo quantity, and for capacities of quantum channels*, Journal of Mathematical Physics **58**, 102202 (2017). DOI 10.1063/1.4987135. https://arxiv.org/abs/1512.09047v7 . Proposition 3A, Eq. (45), bounds output mutual-information variation by $`n[2\epsilon\log d_B+g_2(\epsilon)]`$, with $`\epsilon`$ the half diamond distance; Proposition 11, Eq. (87), gives the capacity statement. The [receiver upper bound](capacity-upper-bound.md) applies Proposition 3A directly to finite-reference codes, so it does not require the infinite-input capacity-formula assumption stated in that preprint's footnote 10. Numbering here refers to arXiv v7.
 
 <a id="w11"></a>
 ## W11
@@ -155,7 +155,7 @@ Y. Wang, J. Minar, L. Sheridan, and V. Scarani, *Efficient excitation of a two-l
 <a id="wmhs12"></a>
 ## WMHS12
 
-Y. Wang, J. Minář, G. Hétet, V. Scarani, *Quantum memory with a single two-level atom in a half cavity*, Physical Review A **85**, 013823 (2012). DOI [10.1103/PhysRevA.85.013823](https://doi.org/10.1103/PhysRevA.85.013823). [arXiv:1111.4261](https://arxiv.org/abs/1111.4261). Section II.C, Eqs. (19)–(24), gives finite-window capture under time-dependent radiative coupling, an optimized efficiency $1-\exp(-\int\gamma_z)$, and an explicit rate ceiling. Environmental loss is set to zero before these equations and no extra dephasing is included. Maximum-rate source-optimized absorption in that limit follows from these established formulas.
+Y. Wang, J. Minář, G. Hétet, V. Scarani, *Quantum memory with a single two-level atom in a half cavity*, Physical Review A **85**, 013823 (2012). DOI [10.1103/PhysRevA.85.013823](https://doi.org/10.1103/PhysRevA.85.013823). [arXiv:1111.4261](https://arxiv.org/abs/1111.4261). Section II.C, Eqs. (19)–(24), gives finite-window capture under time-dependent radiative coupling, an optimized efficiency $`1-\exp(-\int\gamma_z)`$, and an explicit rate ceiling. Environmental loss is set to zero before these equations and no extra dephasing is included. Maximum-rate source-optimized absorption in that limit follows from these established formulas.
 
 <a id="wlj22"></a>
 ## WLJ22

@@ -10,7 +10,7 @@ Run `python tools/verify.py` from the repository root. Dependencies are pinned i
 | `tests/check_objectives.py` | 4 | Pulse eigenfunctions; scalar and full matrix dynamics; independent constrained optimization; exponential comparators and asymptotics |
 | `tests/check_upper_bound.py` | 4 | Exact amplitude-damping distance certificates; multimode antidegradable comparisons; continuity-bound evaluation and amplitude-damping capacity checks; finite/infinite-window examples and boundary scaling |
 
-Raw JSON reports are written to artifacts/ and include detailed tolerances and source hashes. `validated.json` records a successful run; `python tools/verify.py --record` refreshes it after all checks succeed. The verifier also checks Python syntax, local Markdown links and documentation formatting.
+Raw JSON reports are written to artifacts/ and include detailed tolerances and source hashes. `validated.json` records a successful run; `python tools/verify.py --record` refreshes it after all checks succeed. The verifier also checks Python syntax, local Markdown links and documentation formatting, including protected inline-math delimiters and compatible operator notation.
 
 ## What the evidence means
 

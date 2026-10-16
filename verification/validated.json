@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "recorded_utc": "2026-10-16T02:11:11.335043+00:00",
+  "recorded_utc": "2026-10-16T04:37:27.416519+00:00",
   "scope": "22 scientific check groups plus structural checks supporting the analytical results. See verification/README.md for the evidence covered.",
   "scientific_groups": 22,
   "structure": {
@@ -73,6 +73,6 @@
     "tests/check_objectives.py": "2e583e99f923dc66e1f673371237db2b6197468d5f45b6fea18a2915312405ab",
     "tests/check_simulation.py": "71d7a8ecbfecf1eb4f1c910fce50293162ada89f6e4b5cff1d7a60cd3f4d2e50",
     "tests/check_upper_bound.py": "4bea978390bd4a4881155eec35e9c60946f24e3148314036d1688ff468714c58",
-    "tools/verify.py": "55e2f87730b13cd7961b0a316b74e4a98a14fdb0300e6a4e9f31d114508beba1"
+    "tools/verify.py": "bf847d476e84cd7c676ce2f461647f0fcfb4d932b0bdcf6144fe4e434eb7b04e"
   }
 }
