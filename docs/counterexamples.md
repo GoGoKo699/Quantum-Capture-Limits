@@ -4,7 +4,7 @@ These examples delimit the [simulation theorem](channel-simulation.md). A prescr
 
 ## A fixed-source counterexample makes the resource boundary concrete
 
-Take a noiseless single-port receiver, $\kappa=\gamma_\phi=0$, with $g_{\max}=1$, capture duration T=4, and a **fixed square** incoming pulse $\xi(t)=1/\sqrt T$ for $0\le t\le T$. The excitation amplitude satisfies
+Take a noiseless single-port receiver, $\kappa=\gamma_\phi=0$, with $g_{\max}=1$, capture duration $T=4$, and a **fixed square** incoming pulse $\xi(t)=1/\sqrt T$ for $0\le t\le T$. The excitation amplitude satisfies
 
 ```math
 \dot a(t)=-\frac{g(t)}2a(t)+\sqrt{g(t)}\,\xi(t),\qquad a(0)=0.
@@ -46,7 +46,7 @@ The three numbers answer different optimization problems. They are model calcula
 
 The simulation relied on exponential phase correlations splitting into an extra independent phase process. It does not automatically extend to colored detuning noise.
 
-For a simple check, take reference lookback labels $t=(0,1,2)$, with label zero denoting vacuum, and actual labels $x=(0,1,3)$. They are compatible with a maximum rate 1, followed farther back by a rate-1/2 interval. The extra-time labels are d=(0,0,1).
+For a simple check, take reference lookback labels $t=(0,1,2)$, with label zero denoting vacuum, and actual labels $x=(0,1,3)$. They are compatible with a maximum rate $1$, followed farther back by a rate-$1/2$ interval. The extra-time labels are $d=(0,0,1)$.
 
 Under Markov phase diffusion the residual correlation matrix is $e^{-\gamma_\phi|d_i-d_j|}$, which is positive semidefinite. Under a quasistatic Gaussian detuning with variance 1 and coherence $C(t)=e^{-t^2/2}$, the analogous proposed ratio would be
 
@@ -64,6 +64,6 @@ Its determinant is
 \det R=-(e^{-5/2}-e^{-3/2})^2<0,
 ```
 
-and its minimum eigenvalue is approximately -0.0100788. Therefore that ratio cannot define a phase-noise channel. This is a failure of this particular simulator construction in a changed noise model—not a proof that no other simulator exists, and not a computed capacity advantage for modulation under colored noise.
+and its minimum eigenvalue is approximately -0.0100788. Therefore that ratio cannot define a phase-noise channel. This is a failure of this particular simulator construction in a changed noise model; it is not a proof that no other simulator exists, and not a computed capacity advantage for modulation under colored noise.
 
 Related dynamical-decoupling literature already warns that a specified quantum stochastic Markov dilation and a merely fitted semigroup are not interchangeable [GN17](references.md#gn17) and [BFH23](references.md#bfh23). Those results concern noise suppression by system rotations and do not directly establish this source/receiver channel factorization. Conversely, this factorization is not a general theorem that all physical dynamics fitted by a Lindblad equation remain uncontrollable under every available intervention.

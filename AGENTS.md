@@ -18,6 +18,8 @@ Keep the reading path centered on the present theorems, proofs and examples. Do 
 
 The single external tutorial anchor is Combes, Kerckhoff and Sarovar, "The SLH framework for modeling quantum input-output networks," arXiv:1611.00375v2. Preserve this one-source learning route in docs/tutorial.md. Use the review's PDF section and equation numbering when pointing to it. Other references supply attribution and scientific context rather than a second required tutorial. Explain the bridge from input-output dynamics to channel simulation and quantum capacity within the repository.
 
+Introduce mathematical objects and rate conventions before using them, explain what each operation does, and connect the worked example to the stated resources and theorem. Preserve the direct route from the overview to the proof and reproduction commands. Keep notation and rendered mathematics consistent across the learning and specialist paths. Retain suitable prose rather than rewriting it merely to display an edit.
+
 Run `python tools/verify.py` from the repository root after any scientific or computational edit. Assertions must remain enabled. Generated raw reports belong in artifacts/; they are not proofs. Update verification/validated.json only from an actual successful run using `python tools/verify.py --record`. Never hand-edit a PASS or claim that GitHub Actions succeeded without checking the workflow result.
 
 Use `$...$` for inline mathematics and fenced `math` blocks for display equations. Keep relative links valid. Source code is deduplicated in capture/; independent checks are in tests/. Retain independent numerical formulations instead of making a test call only the formula it purportedly verifies. Preserve LICENSE.

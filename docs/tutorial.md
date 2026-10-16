@@ -4,6 +4,8 @@ This tutorial connects one external teaching source to the results in this repos
 
 The physical question is simple: if the sender can choose the temporal encoding, can changing a noisy receiver's coupling outperform holding it at its maximum? Answering it requires following both excitation probability and coherence with vacuum. An absorption calculation alone does not describe transfer of an unknown qubit.
 
+Consider a qubit whose logical zero is vacuum and whose logical one is a photon with a chosen temporal envelope. The receiver starts in its ground state. Capturing the logical one can excite it, while transferring a superposition also requires coherence between its ground and excited states. These two responses become the population parameter $p$ and coherence amplitude $m$ below. The final worked example evaluates both for a finite pulse.
+
 ## 1. A focused route through the review
 
 Use the original PDF's section and equation numbers; the experimental HTML numbers some equations differently. These selections form one reading route within the same source.
@@ -20,7 +22,9 @@ The review's broader network applications are useful context but unnecessary for
 
 ## 2. Translate the receiver into an SLH model
 
-Write $P_e=|e\rangle\langle e|$ and $\sigma_-=|g\rangle\langle e|$. Our receiver has the triple
+An SLH triple specifies a field scattering matrix $\mathbf S$, a vector of system–field coupling operators $\mathbf L$, and a system Hamiltonian $H$. For this receiver, $g(t)$ is the incident-port population-decay rate, $\kappa$ is the inaccessible radiative-loss rate, $\gamma_\phi$ is extra coherence decay, and $\Delta(t)$ is known detuning. The rates $\kappa$ and $\gamma_\phi$ stay fixed under control.
+
+Write $P_e=|e\rangle\langle e|$ and $\sigma_-=|g\rangle\langle e|$. The receiver's triple is
 
 ```math
 \mathbf S=I_3,\qquad
@@ -33,7 +37,7 @@ Write $P_e=|e\rangle\langle e|$ and $\sigma_-=|g\rangle\langle e|$. Our receiver
 H(t)=\Delta(t)P_e.
 ```
 
-The first port carries the signal, which may contain vacuum and one photon. The second and third input ports are in vacuum and are inaccessible. The third coupling produces pure dephasing rather than an additional population-decay channel. Here $\mathbf S$ is the scattering matrix; the scalar $S=\Gamma_M T$ used later is a dimensionless window length.
+The first port carries the signal, which may contain vacuum and one photon. The second and third input ports are in vacuum and are inaccessible. Squaring a coupling amplitude gives its dissipator coefficient, so the population-decay couplings contain $\sqrt{g(t)}$ and $\sqrt\kappa$. The third coupling produces pure dephasing rather than an additional population-decay channel. The scalar $S=\Gamma_M T$ used later is a dimensionless window length, distinct from the scattering matrix $\mathbf S$.
 
 | Review language | Receiver notation and meaning |
 |---|---|
@@ -171,7 +175,7 @@ This identity separates the reference receiver's dephasing from additional depha
 2. Attenuate its amplitude by $c(u)=\sqrt{[g(x(u))/\Gamma(x(u))]/\beta}\le1$, sending lost weight to vacuum.
 3. Average the phases $e^{i\sqrt{2\gamma_\phi}B_{d(u)}}$, where $B_s$ is a standard Wiener process; leave vacuum unchanged.
 
-The last operation multiplies photon-sector coherences by $e^{-\gamma_\phi|d(u)-d(v)|}$ and vacuum–photon coherences by $e^{-\gamma_\phi d(u)}$. Every realization is unitary, so their average is completely positive. This simultaneous match of both kernels is stronger than a pointwise comparison of excitation probabilities.
+A standard Wiener process starts at $B_0=0$ and has centered Gaussian increments with variance $\operatorname{Var}(B_s-B_t)=|s-t|$. The Gaussian phase average therefore multiplies photon-sector coherences by $e^{-\gamma_\phi|d(u)-d(v)|}$ and vacuum–photon coherences by $e^{-\gamma_\phi d(u)}$. Every realization is unitary, so their average is completely positive. This simultaneous match of both kernels is stronger than a pointwise comparison of excitation probabilities.
 
 A generalized inverse handles sets with zero total radiative rate $\Gamma=0$: their photon weight becomes vacuum, while elapsed time remains in $d$. If $g=0$ but $\kappa>0$, the coordinate map retains the sector and the attenuation $c=0$ sends its photon weight to vacuum. The [full proof](channel-simulation.md) establishes
 
@@ -197,7 +201,7 @@ This determines zero versus positive capacity, not its positive value. The [uppe
 
 ## 7. An analytical checkpoint
 
-Take maximum coupling, zero detuning and zero extra dephasing, with $u=\Gamma_M x$ and $S=\Gamma_M T$. The kernels are
+Take maximum coupling, zero detuning and zero extra dephasing, with $u=\Gamma_M x$ and $S=\Gamma_M T$. A physical-time envelope $f_x$ becomes $f_u(u)=f_x(u/\Gamma_M)/\sqrt{\Gamma_M}$, so its normalization is unchanged. Write $f=f_u$ for this calculation. The kernels in this coordinate are
 
 ```math
 h_M(u)=\sqrt\beta\,e^{-u/2},\qquad
